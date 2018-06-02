@@ -17,6 +17,65 @@ class ExtendedFakerTest extends AbstractTestCase
         $this->expectException(LogicException::class);
         $this->expectExceptionMessageRegExp('~just for IDE~i');
 
-        new ExtendedFaker();
+        new ExtendedFaker;
+    }
+
+    public function testPhpDocs()
+    {
+        $mixins = [
+            \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
+        ];
+
+        $methods = [
+            'carMarkAndModel',
+            'carMark',
+            'carModel',
+            'bodyCode',
+            'validBodyCode',
+            'invalidBodyCode',
+            'chassisCode',
+            'validChassisCode',
+            'invalidChassisCode',
+            'driverLicenseNumber',
+            'validDriverLicenseNumber',
+            'invalidDriverLicenseNumber',
+            'grzCode',
+            'validGrzCode',
+            'invalidGrzCode',
+            'ptsCode',
+            'validPtsCode',
+            'invalidPtsCode',
+            'stsCode',
+            'validStsCode',
+            'invalidStsCode',
+            'vinCode',
+            'validVinCode',
+            'invalidVinCode',
+        ];
+
+        $class_content = \file_get_contents($path = __DIR__ . '/../src/ExtendedFaker.php');
+
+        foreach ($mixins as $mixin) {
+            $this->assertRegExp(
+                sprintf('~\@mixin.+%s$~m', \preg_quote($mixin, '/')),
+                $class_content,
+                "Mixin [{$mixin}] does not found in [{$path}]"
+            );
+        }
+
+        foreach ($methods as $method) {
+            $this->assertRegExp(
+                sprintf('~\@method\s\S+\s%s\(.*\)$~m', \preg_quote($method, '/')),
+                $class_content,
+                "Method [{$mixin}] does not found in [{$path}]"
+            );
+        }
     }
 }
