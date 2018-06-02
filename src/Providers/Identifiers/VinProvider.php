@@ -63,18 +63,13 @@ class VinProvider extends AbstractIdentifierProvider
     public function invalidVinCode(...$arguments)
     {
         $code = '';
-        $case = static::numberBetween(0, 2);
 
-        switch ($case) {
+        switch ($case = static::numberBetween(0, 1)) {
             case 0:
-                $code = static::vinCode(...$arguments) . $case;
-                break;
-
-            case 1:
                 $code = \mb_substr(static::vinCode(...$arguments), 0, -1);
                 break;
 
-            case 2:
+            case 1:
                 $code = \substr_replace(
                     $code = static::vinCode(...$arguments),
                     'I',
