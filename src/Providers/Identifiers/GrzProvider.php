@@ -78,7 +78,7 @@ class GrzProvider extends AbstractIdentifierProvider
     {
         $code = static::grzCode(...$arguments);
 
-        switch (static::numberBetween(0, 1)) {
+        switch (static::numberBetween(0, 2)) {
             case 0:
                 return mb_substr($code, 0, 2);
 
