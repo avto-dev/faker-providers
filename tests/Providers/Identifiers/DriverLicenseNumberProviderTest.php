@@ -2,9 +2,9 @@
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider;
-use AvtoDev\IDEntity\IDEntity;
 use Closure;
+use AvtoDev\IDEntity\IDEntity;
+use AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider;
 
 class DriverLicenseNumberProviderTest extends AbstractIdentifierTestCase
 {

@@ -2,9 +2,9 @@
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider;
-use AvtoDev\IDEntity\IDEntity;
 use Closure;
+use AvtoDev\IDEntity\IDEntity;
+use AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider;
 
 class GrzProviderTest extends AbstractIdentifierTestCase
 {

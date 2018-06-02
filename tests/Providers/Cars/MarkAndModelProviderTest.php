@@ -8,14 +8,6 @@ use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 class MarkAndModelProviderTest extends AbstractProviderTestCase
 {
     /**
-     * {@inheritdoc}
-     */
-    protected function providerClass()
-    {
-        return MarkAndModelProvider::class;
-    }
-
-    /**
      * Test car mark generation method.
      *
      * @return void
@@ -74,7 +66,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $car_and_model = $this->faker->carMarkAndModel;
 
-            $mark_found = false;
+            $mark_found  = false;
             $model_found = false;
 
             foreach ($marks as $mark) {
@@ -96,5 +88,13 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
             $this->assertTrue($mark_found);
             $this->assertTrue($model_found);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function providerClass()
+    {
+        return MarkAndModelProvider::class;
     }
 }

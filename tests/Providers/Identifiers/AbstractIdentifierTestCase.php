@@ -2,11 +2,11 @@
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
-use AvtoDev\FakerProviders\Tests\Traits\CreatesLaravelApplicationTrait;
 use Closure;
 use Illuminate\Foundation\Application;
 use Illuminate\Validation\Factory as ValidationFactory;
+use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
+use AvtoDev\FakerProviders\Tests\Traits\CreatesLaravelApplicationTrait;
 
 abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
 {
@@ -32,40 +32,6 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
         $this->app = $this->createApplication();
 
         $this->validation_factory = $this->app->make('validator');
-    }
-
-    /**
-     * Get valid identifier value.
-     *
-     * @return string
-     */
-    abstract protected function getValidIdentifier();
-
-    /**
-     * Get INVALID identifier value.
-     *
-     * @return string
-     */
-    abstract protected function getInvalidIdentifier();
-
-    /**
-     * Get rule for validator checking.
-     *
-     * @return string
-     */
-    protected function validatorRule()
-    {
-        return 'string|required';
-    }
-
-    /**
-     * Get custom validation callback.
-     *
-     * @return Closure|null
-     */
-    protected function validationCallback()
-    {
-        return null;
     }
 
     /**
@@ -112,5 +78,38 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
                 $this->assertFalse($callback($identifier), "Identifier [{$identifier}] failed callback checking");
             }
         }
+    }
+
+    /**
+     * Get valid identifier value.
+     *
+     * @return string
+     */
+    abstract protected function getValidIdentifier();
+
+    /**
+     * Get INVALID identifier value.
+     *
+     * @return string
+     */
+    abstract protected function getInvalidIdentifier();
+
+    /**
+     * Get rule for validator checking.
+     *
+     * @return string
+     */
+    protected function validatorRule()
+    {
+        return 'string|required';
+    }
+
+    /**
+     * Get custom validation callback.
+     *
+     * @return Closure|null
+     */
+    protected function validationCallback()
+    {
     }
 }

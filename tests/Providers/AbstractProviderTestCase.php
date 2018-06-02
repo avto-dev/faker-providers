@@ -2,9 +2,9 @@
 
 namespace AvtoDev\FakerProviders\Tests\Providers;
 
+use Faker\Generator as FakerGenerator;
 use AvtoDev\FakerProviders\ExtendedFaker;
 use AvtoDev\FakerProviders\Tests\AbstractTestCase;
-use Faker\Generator as FakerGenerator;
 
 abstract class AbstractProviderTestCase extends AbstractTestCase
 {
@@ -14,13 +14,6 @@ abstract class AbstractProviderTestCase extends AbstractTestCase
      * @var FakerGenerator|ExtendedFaker
      */
     protected $faker;
-
-    /**
-     * Get provider class name for testing.
-     *
-     * @return string
-     */
-    abstract protected function providerClass();
 
     /**
      * {@inheritdoc}
@@ -46,4 +39,11 @@ abstract class AbstractProviderTestCase extends AbstractTestCase
 
         $this->assertContains($this->providerClass(), $loaded);
     }
+
+    /**
+     * Get provider class name for testing.
+     *
+     * @return string
+     */
+    abstract protected function providerClass();
 }

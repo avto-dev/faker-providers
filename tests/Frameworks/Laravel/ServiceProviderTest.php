@@ -3,9 +3,8 @@
 namespace AvtoDev\FakerProviders\Tests\Frameworks\Laravel;
 
 use Faker\Generator as FakerGenerator;
-use AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider;
-use AvtoDev\FakerProviders\Tests\Traits\CreatesLaravelApplicationTrait;
 use Illuminate\Foundation\Testing\TestCase as IlluminateTestCase;
+use AvtoDev\FakerProviders\Tests\Traits\CreatesLaravelApplicationTrait;
 
 class ServiceProviderTest extends IlluminateTestCase
 {

@@ -2,9 +2,9 @@
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\Identifiers\VinProvider;
-use AvtoDev\IDEntity\IDEntity;
 use Closure;
+use AvtoDev\IDEntity\IDEntity;
+use AvtoDev\FakerProviders\Providers\Identifiers\VinProvider;
 
 class VinProviderTest extends AbstractIdentifierTestCase
 {
