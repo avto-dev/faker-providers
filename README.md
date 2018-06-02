@@ -64,12 +64,12 @@ $ composer test
 [badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/faker-providers.svg?style=flat&maxAge=30
 [badge_license]:https://img.shields.io/packagist/l/avto-dev/faker-providers.svg?style=flat&maxAge=30
 [badge_build_status]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/badges/build.png?b=master
-[badge_styleci]:https://styleci.io/repos/666666666/shield
+[badge_styleci]:https://styleci.io/repos/135797034/shield
 [badge_coverage]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/badges/coverage.png?b=master
 [badge_quality]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/badges/quality-score.png?b=master
 [badge_issues]:https://img.shields.io/github/issues/avto-dev/faker-providers.svg?style=flat&maxAge=30
 [link_packagist]:https://packagist.org/packages/avto-dev/faker-providers
-[link_styleci]:https://styleci.io/repos/666666666/
+[link_styleci]:https://styleci.io/repos/135797034/
 [link_license]:https://github.com/avto-dev/faker-providers/blob/master/LICENSE
 [link_build_status]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/build-status/master
 [link_coverage]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/?branch=master
