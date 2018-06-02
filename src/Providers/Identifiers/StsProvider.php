@@ -2,14 +2,12 @@
 
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
-
 /**
  * @property-read string stsCode
  * @property-read string validStsCode
  * @property-read string invalidStsCode
  */
-class StsProvider extends AbstractFakerProvider
+class StsProvider extends AbstractIdentifierProvider
 {
     /**
      * Chars that can be used in sts number.
@@ -39,9 +37,9 @@ class StsProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function stsCode(...$arguments)
+    public static function stsCode(...$arguments)
     {
-        return $this->validStsCode(...$arguments);
+        return static::validStsCode(...$arguments);
     }
 
     /**
@@ -51,7 +49,7 @@ class StsProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function validStsCode(...$arguments)
+    public static function validStsCode(...$arguments)
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -63,18 +61,18 @@ class StsProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function invalidStsCode(...$arguments)
+    public static function invalidStsCode(...$arguments)
     {
         $code = '';
         $case = static::numberBetween(0, 1);
 
         switch ($case) {
             case 0:
-                $code = $this->stsCode(...$arguments) . $case;
+                $code = static::stsCode(...$arguments) . $case;
                 break;
 
             case 1:
-                $code = mb_substr($this->stsCode(...$arguments), 0, -1);
+                $code = mb_substr(static::stsCode(...$arguments), 0, -1);
                 break;
         }
 

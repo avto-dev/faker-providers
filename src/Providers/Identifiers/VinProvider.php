@@ -2,14 +2,12 @@
 
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
-
 /**
  * @property-read string vinCode
  * @property-read string validVinCode
  * @property-read string invalidVinCode
  */
-class VinProvider extends AbstractFakerProvider
+class VinProvider extends AbstractIdentifierProvider
 {
     /**
      * White-list chars for using.
@@ -38,9 +36,9 @@ class VinProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function vinCode(...$arguments)
+    public static function vinCode(...$arguments)
     {
-        return $this->validVinCode(...$arguments);
+        return static::validVinCode(...$arguments);
     }
 
     /**
@@ -50,7 +48,7 @@ class VinProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function validVinCode(...$arguments)
+    public static function validVinCode(...$arguments)
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -69,16 +67,16 @@ class VinProvider extends AbstractFakerProvider
 
         switch ($case) {
             case 0:
-                $code = $this->vinCode(...$arguments) . $case;
+                $code = static::vinCode(...$arguments) . $case;
                 break;
 
             case 1:
-                $code = mb_substr($this->vinCode(...$arguments), 0, -1);
+                $code = \mb_substr(static::vinCode(...$arguments), 0, -1);
                 break;
 
             case 2:
-                $code = substr_replace(
-                    $code = $this->vinCode(...$arguments),
+                $code = \substr_replace(
+                    $code = static::vinCode(...$arguments),
                     'I',
                     static::numberBetween(0, mb_strlen($code) - 1),
                     1

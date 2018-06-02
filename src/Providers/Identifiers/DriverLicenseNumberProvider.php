@@ -2,14 +2,12 @@
 
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
-
 /**
  * @property-read string driverLicenseNumber
  * @property-read string validDriverLicenseNumber
  * @property-read string invalidDriverLicenseNumber
  */
-class DriverLicenseNumberProvider extends AbstractFakerProvider
+class DriverLicenseNumberProvider extends AbstractIdentifierProvider
 {
     /**
      * Chars what can be.
@@ -48,9 +46,9 @@ class DriverLicenseNumberProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function driverLicenseNumber(...$arguments)
+    public static function driverLicenseNumber(...$arguments)
     {
-        return $this->validDriverLicenseNumber(...$arguments);
+        return static::validDriverLicenseNumber(...$arguments);
     }
 
     /**
@@ -60,7 +58,7 @@ class DriverLicenseNumberProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function validDriverLicenseNumber(...$arguments)
+    public static function validDriverLicenseNumber(...$arguments)
     {
         return str_replace(
             'REG',
@@ -76,7 +74,7 @@ class DriverLicenseNumberProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function invalidDriverLicenseNumber(...$arguments)
+    public static function invalidDriverLicenseNumber(...$arguments)
     {
         static $invalid_formats = [
             '####?#',

@@ -2,14 +2,12 @@
 
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
-
 /**
  * @property-read string grzCode
  * @property-read string validGrzCode
  * @property-read string invalidGrzCode
  */
-class GrzProvider extends AbstractFakerProvider
+class GrzProvider extends AbstractIdentifierProvider
 {
     /**
      * Allowed formats.
@@ -17,8 +15,8 @@ class GrzProvider extends AbstractFakerProvider
      * @var string[]
      */
     protected static $formats = [
-        '?###??reg',
-        '####??reg',
+        '?###??REG',
+        '####??REG',
     ];
 
     /**
@@ -48,9 +46,9 @@ class GrzProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function grzCode(...$arguments)
+    public static function grzCode(...$arguments)
     {
-        return $this->validGrzCode(...$arguments);
+        return static::validGrzCode(...$arguments);
     }
 
     /**
@@ -60,12 +58,12 @@ class GrzProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function validGrzCode(...$arguments)
+    public static function validGrzCode(...$arguments)
     {
         return str_replace(
-            'reg',
+            'REG',
             static::randomElement(static::$regions),
-            self::bothify($this->generator->parse(static::randomElement(static::$formats)))
+            self::bothify(static::randomElement(static::$formats))
         );
     }
 
@@ -76,9 +74,9 @@ class GrzProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function invalidGrzCode(...$arguments)
+    public static function invalidGrzCode(...$arguments)
     {
-        $code = $this->grzCode(...$arguments);
+        $code = static::grzCode(...$arguments);
 
         switch (static::numberBetween(0, 1)) {
             case 0:

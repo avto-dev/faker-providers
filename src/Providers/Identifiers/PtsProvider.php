@@ -16,9 +16,9 @@ class PtsProvider extends StsProvider
      *
      * @return string
      */
-    public function ptsCode(...$arguments)
+    public static function ptsCode(...$arguments)
     {
-        return $this->validPtsCode(...$arguments);
+        return static::validPtsCode(...$arguments);
     }
 
     /**
@@ -28,9 +28,9 @@ class PtsProvider extends StsProvider
      *
      * @return string
      */
-    public function validPtsCode(...$arguments)
+    public static function validPtsCode(...$arguments)
     {
-        return $this->validStsCode(...$arguments);
+        return static::validStsCode(...$arguments);
     }
 
     /**
@@ -40,8 +40,8 @@ class PtsProvider extends StsProvider
      *
      * @return string
      */
-    public function invalidPtsCode(...$arguments)
+    public static function invalidPtsCode(...$arguments)
     {
-        return $this->invalidStsCode(...$arguments);
+        return static::invalidStsCode(...$arguments);
     }
 }
