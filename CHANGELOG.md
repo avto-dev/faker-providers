@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.1
+
+### Fixed
+
+- Laravel configuration file comments updated.
+
 ## v1.1.0
 
 ### Changed

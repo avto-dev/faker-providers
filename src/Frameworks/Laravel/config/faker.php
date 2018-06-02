@@ -4,10 +4,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Extended Faker Providers Classes
+    | Additional Faker Providers Classes
     |--------------------------------------------------------------------------
     |
-    | Here you may specify config sections description.
+    | The providers listed here will be automatically loaded and applied to
+    | the faker instance. Feel free to add your own providers to this array.
     |
     */
     'providers' => [
