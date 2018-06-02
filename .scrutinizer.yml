@@ -1,0 +1,78 @@
+filter:
+  excluded_paths:
+    - 'tests/*'
+
+checks:
+  php:
+    code_rating: true
+    duplication: true
+
+build:
+  environment:
+    mysql: false
+    postgresql: false
+    mongodb: false
+    elasticsearch: false
+    redis: false
+    memcached: false
+    neo4j: false
+    rabbitmq: false
+
+  tests:
+    override:
+      -
+        command: 'vendor/bin/phpunit --coverage-clover=clover-file'
+        coverage:
+          file: 'clover-file'
+          format: 'clover'
+    after:
+      - php-scrutinizer-run
+
+  dependencies:
+    override:
+      - composer update --no-interaction
+
+  nodes:
+    php56-lowest:
+      environment:
+        php: 5.6
+      dependencies:
+        override:
+          - composer update --no-interaction --prefer-lowest
+
+    php56:
+      environment:
+        php: 5.6
+
+    php70-lowest:
+      environment:
+        php: 7.0
+      dependencies:
+        override:
+          - composer update --no-interaction --prefer-lowest
+
+    php70:
+      environment:
+        php: 7.0
+
+    php71-lowest:
+      environment:
+        php: 7.1
+      dependencies:
+        override:
+          - composer update --no-interaction --prefer-lowest
+
+    php71:
+      environment:
+        php: 7.1
+
+    php72-lowest:
+      environment:
+        php: 7.2
+      dependencies:
+        override:
+          - composer update --no-interaction --prefer-lowest
+
+    php72:
+      environment:
+        php: 7.2

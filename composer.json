@@ -1,0 +1,61 @@
+{
+    "name": "avto-dev/faker-providers",
+    "description": "Extended faker package providers",
+    "keywords": [
+        "faker",
+        "laravel",
+        "providers",
+        "extended",
+        "tests"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "avto-dev",
+            "homepage": "https://github.com/avto-dev"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || >=7.0 <7.3",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "fzaninotto/faker": "~1.4"
+    },
+    "require-dev": {
+        "avto-dev/extended-laravel-validator": "^1.1.2",
+        "avto-dev/identity-laravel": "^2.1",
+        "laravel/laravel": ">=5.4.0 <5.7.0",
+        "phpunit/phpunit": "~5.7.10 || ^6.4 || ~7.0",
+        "symfony/var-dumper": "~3.2 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AvtoDev\\FakerProviders\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AvtoDev\\FakerProviders\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "@php ./vendor/bin/phpunit --no-coverage",
+        "test-cover": "@php ./vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AvtoDev\\FakerProviders\\Frameworks\\Laravel\\ServiceProvider"
+            ]
+        }
+    },
+    "support": {
+        "issues": "https://github.com/avto-dev/faker-providers/issues",
+        "source": "https://github.com/avto-dev/faker-providers"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
