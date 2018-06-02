@@ -4,8 +4,4 @@
 
 ### Changed
 
-- 
-
-### Added
-
-- 
+- First release
