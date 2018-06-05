@@ -2,7 +2,6 @@
 
 namespace AvtoDev\FakerProviders\Tests;
 
-use LogicException;
 use AvtoDev\FakerProviders\ExtendedFaker;
 
 class ExtendedFakerTest extends AbstractTestCase
@@ -14,16 +13,22 @@ class ExtendedFakerTest extends AbstractTestCase
      */
     public function testClassExists()
     {
-        $this->expectException(LogicException::class);
-        $this->expectExceptionMessageRegExp('~just for IDE~i');
+        $this->expectException(\Error::class);
+        $this->expectExceptionMessageRegExp('~Call to private~i');
 
         new ExtendedFaker;
     }
 
+    /**
+     * Test class php doc.
+     *
+     * @return void
+     */
     public function testPhpDocs()
     {
         $mixins = [
             \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider::class,
+
             \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider::class,
@@ -31,6 +36,8 @@ class ExtendedFakerTest extends AbstractTestCase
             \AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
+
+            \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
         ];
 
         $class_content = \file_get_contents($path = __DIR__ . '/../src/ExtendedFaker.php');
