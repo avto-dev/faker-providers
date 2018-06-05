@@ -78,7 +78,3 @@ build:
     php72:
       environment:
         php: 7.2
-
-    analysis:
-      resources:
-        cpus: 2
