@@ -81,4 +81,4 @@ build:
 
     analysis:
       resources:
-        cpus: 4
+        cpus: 2
