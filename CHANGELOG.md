@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0
+
+### Added
+
+- Added `carGeneration` method.
+
 ## v1.1.1
 
 ### Fixed

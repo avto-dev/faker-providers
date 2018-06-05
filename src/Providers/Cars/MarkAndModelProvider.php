@@ -8,6 +8,7 @@ use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
  * @property-read string carMarkAndModel
  * @property-read string carMark
  * @property-read string carModel
+ * @property-read string carGeneration
  */
 class MarkAndModelProvider extends AbstractFakerProvider
 {
@@ -43,6 +44,16 @@ class MarkAndModelProvider extends AbstractFakerProvider
     ];
 
     /**
+     * Allowed cars generations.
+     *
+     * @var string[]
+     */
+    public static $car_generations = [
+        'I', 'II', 'III', 'IV', 'V', 'VI', 'IV',
+        'I Restyling', 'II Restyling', 'III Restyling', 'IV Restyling', 'V Restyling', 'VI Restyling', 'IV Restyling'
+    ];
+
+    /**
      * Generate random car mark and model as a single string.
      *
      * @return string
@@ -74,5 +85,15 @@ class MarkAndModelProvider extends AbstractFakerProvider
         return static::randomElement(static::$car_marks_and_models[$mark === null
             ? static::carMark()
             : $mark]);
+    }
+
+    /**
+     * Generate random car generation.
+     *
+     * @return string
+     */
+    public static function carGeneration()
+    {
+        return static::randomElement(static::$car_generations);
     }
 }

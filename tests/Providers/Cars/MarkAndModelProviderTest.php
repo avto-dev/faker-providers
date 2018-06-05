@@ -91,6 +91,21 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
     }
 
     /**
+     * Test 'car generation' generation method.
+     *
+     * @return void
+     */
+    public function testCarGeneration()
+    {
+        $valid = \array_keys(MarkAndModelProvider::$car_generations);
+
+        for ($i = 0; $i < $this->repeats_count; $i++) {
+            $this->assertContains($this->faker->carGeneration(), $valid);
+            $this->assertContains($this->faker->carGeneration, $valid);
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     protected function providerClass()

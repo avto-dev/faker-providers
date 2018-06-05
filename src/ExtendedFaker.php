@@ -10,6 +10,7 @@ use LogicException;
  * @method string carMarkAndModel()
  * @method string carMark()
  * @method string carModel($mark = null)
+ * @method string carGeneration()
  *
  * @mixin \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider
  *
