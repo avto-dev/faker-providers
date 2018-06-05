@@ -50,7 +50,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
      */
     public static $car_generations = [
         'I', 'II', 'III', 'IV', 'V', 'VI', 'IV',
-        'I Restyling', 'II Restyling', 'III Restyling', 'IV Restyling', 'V Restyling', 'VI Restyling', 'IV Restyling'
+        'I Restyling', 'II Restyling', 'III Restyling', 'IV Restyling', 'V Restyling', 'VI Restyling', 'IV Restyling',
     ];
 
     /**
