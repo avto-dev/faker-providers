@@ -2,10 +2,10 @@
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Cars;
 
-use AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider;
-use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\IDEntity\Types\TypedIDEntityInterface;
+use AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider;
+use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 class IDEntityProviderTest extends AbstractProviderTestCase
 {
