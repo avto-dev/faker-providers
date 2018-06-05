@@ -53,6 +53,10 @@ use LogicException;
  * @method string vinCode()
  * @method string validVinCode()
  * @method string invalidVinCode()
+ *
+ * @mixin \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider
+ *
+ * @method \AvtoDev\IDEntity\Types\TypedIDEntityInterface idEntity($id_type = null)
  */
 class ExtendedFaker extends \Faker\Generator
 {

@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.0
+
+### Added
+
+- Added `idEntity` method.
+
 ## v1.2.0
 
 ### Added

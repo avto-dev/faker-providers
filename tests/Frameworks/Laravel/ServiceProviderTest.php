@@ -34,6 +34,7 @@ class ServiceProviderTest extends IlluminateTestCase
     {
         $providers = [
             \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider::class,
+
             \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider::class,
@@ -41,6 +42,8 @@ class ServiceProviderTest extends IlluminateTestCase
             \AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
+
+            \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
         ];
 
         foreach ($providers as $provider_class) {

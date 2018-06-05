@@ -50,6 +50,9 @@
             ]
         }
     },
+    "suggest": {
+        "avto-dev/identity-laravel": "Adds supports for a working with IDEntity package (^2.1)"
+    },
     "support": {
         "issues": "https://github.com/avto-dev/faker-providers/issues",
         "source": "https://github.com/avto-dev/faker-providers"

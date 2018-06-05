@@ -104,6 +104,8 @@ class ServiceProvider extends IlluminateServiceProvider
             \AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
+
+            \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
         ];
     }
 }

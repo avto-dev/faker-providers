@@ -57,7 +57,8 @@ $ php artisan vendor:publish --provider="AvtoDev\FakerProviders\Frameworks\Larav
 - Номер кузова ТС;
 - Номер шасси ТС;
 - Номер водительского удостоверения;
-- Марку и модель ТС.
+- Марку и модель ТС;
+- Объект IDEntity (необходима установка дополнительного пакета [avto-dev/identity-laravel][identity]).
 
 Для использования того или иного провайдера вам необходимо его сперва загрузить:
 
@@ -109,6 +110,7 @@ $faker->carMarkAndModel;   // Skoda Octavia
 $faker->carMark;           // Daewoo
 $faker->carModel;          // Juke
 $faker->carModel('Honda'); // Civic Type R
+$faker->carGeneration;     // IV Restyling
 ```
 
 ### `AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider`
@@ -174,6 +176,17 @@ $faker->driverLicenseNumber;        // 66 ВС 167633
 $faker->invalidDriverLicenseNumber; // 6802О3
 ```
 
+### `AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider`
+
+> Необходима установка дополнительного пакета [avto-dev/identity-laravel][identity].
+
+```php
+<?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
+
+$faker->idEntity('VIN'); // object:TypedIDEntityInterface (type 'VIN')
+$faker->idEntity;        // object:TypedIDEntityInterface (random type)
+```
+
 ### Тестирование
 
 Для тестирования данного пакета используется фреймворк `phpunit`. Для запуска тестов выполните в терминале:
@@ -210,3 +223,4 @@ $ composer test
 [link_issues]:https://github.com/avto-dev/faker-providers/issues
 [getcomposer]:https://getcomposer.org/download/
 [faker]:https://github.com/fzaninotto/Faker
+[identity]:https://github.com/avto-dev/identity-laravel

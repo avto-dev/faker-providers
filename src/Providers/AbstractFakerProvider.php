@@ -2,9 +2,10 @@
 
 namespace AvtoDev\FakerProviders\Providers;
 
-use Faker\Provider\Base;
-
-abstract class AbstractFakerProvider extends Base
+abstract class AbstractFakerProvider extends \Faker\Provider\Base
 {
-    //
+    /**
+     * @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker
+     */
+    protected $generator;
 }
