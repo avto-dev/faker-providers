@@ -13,10 +13,7 @@ class ExtendedFakerTest extends AbstractTestCase
      */
     public function testClassExists()
     {
-        $this->expectException(\Error::class);
-        $this->expectExceptionMessageRegExp('~Call to private~i');
-
-        new ExtendedFaker;
+        $this->assertTrue(\class_exists(ExtendedFaker::class));
     }
 
     /**
