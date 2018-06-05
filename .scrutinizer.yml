@@ -1,6 +1,8 @@
 filter:
   excluded_paths:
-    - 'tests/*'
+    - tests/
+  dependency_paths:
+    - vendor/
 
 checks:
   php:
@@ -26,7 +28,7 @@ build:
           file: 'clover-file'
           format: 'clover'
     after:
-      - php-scrutinizer-run
+      - php-scrutinizer-run --enable-security-analysis
 
   dependencies:
     override:
@@ -76,3 +78,7 @@ build:
     php72:
       environment:
         php: 7.2
+
+    analysis:
+      resources:
+        cpus: 4
