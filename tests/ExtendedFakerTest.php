@@ -7,13 +7,16 @@ use AvtoDev\FakerProviders\ExtendedFaker;
 class ExtendedFakerTest extends AbstractTestCase
 {
     /**
-     * Assert that class exists.
+     * Assert that class constructor thrown an exception.
      *
      * @return void
      */
-    public function testClassExists()
+    public function testConstructorThrownException()
     {
-        $this->assertTrue(\class_exists(ExtendedFaker::class));
+        $this->expectException(\LogicException::class);
+        $this->expectExceptionMessageRegExp('~just for IDE~i');
+
+        new ExtendedFaker;
     }
 
     /**

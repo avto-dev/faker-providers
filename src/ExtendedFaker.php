@@ -2,6 +2,8 @@
 
 namespace AvtoDev\FakerProviders;
 
+use LogicException;
+
 /**
  * @mixin \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider
  * @mixin \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider
@@ -17,9 +19,11 @@ class ExtendedFaker extends \Faker\Generator
 {
     /**
      * ExtendedFaker constructor.
+     *
+     * @throws LogicException
      */
-    private function __construct()
+    public function __construct()
     {
-        // Use this class just for IDE type-hinting
+        throw new LogicException('Use this class just for IDE type-hinting');
     }
 }
