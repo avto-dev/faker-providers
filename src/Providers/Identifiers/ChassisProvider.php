@@ -16,9 +16,9 @@ class ChassisProvider extends BodyProvider
      *
      * @return string
      */
-    public static function chassisCode(...$arguments)
+    public function chassisCode(...$arguments)
     {
-        return static::validChassisCode(...$arguments);
+        return $this->validChassisCode(...$arguments);
     }
 
     /**
@@ -28,9 +28,9 @@ class ChassisProvider extends BodyProvider
      *
      * @return string
      */
-    public static function validChassisCode(...$arguments)
+    public function validChassisCode(...$arguments)
     {
-        return static::validBodyCode(...$arguments);
+        return $this->validBodyCode(...$arguments);
     }
 
     /**
@@ -40,8 +40,8 @@ class ChassisProvider extends BodyProvider
      *
      * @return string
      */
-    public static function invalidChassisCode(...$arguments)
+    public function invalidChassisCode(...$arguments)
     {
-        return static::invalidBodyCode(...$arguments);
+        return $this->invalidBodyCode(...$arguments);
     }
 }

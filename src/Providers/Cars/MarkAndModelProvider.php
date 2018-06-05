@@ -58,9 +58,9 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public static function carMarkAndModel()
+    public function carMarkAndModel()
     {
-        return sprintf('%s %s', $mark = static::carMark(), static::carModel($mark));
+        return sprintf('%s %s', $mark = $this->carMark(), $this->carModel($mark));
     }
 
     /**
@@ -68,7 +68,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public static function carMark()
+    public function carMark()
     {
         return static::randomElement(\array_keys(static::$car_marks_and_models));
     }
@@ -80,10 +80,10 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public static function carModel($mark = null)
+    public function carModel($mark = null)
     {
         return static::randomElement(static::$car_marks_and_models[$mark === null
-            ? static::carMark()
+            ? $this->carMark()
             : $mark]);
     }
 
@@ -92,7 +92,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public static function carGeneration()
+    public function carGeneration()
     {
         return static::randomElement(static::$car_generations);
     }

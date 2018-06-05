@@ -6,6 +6,14 @@
 
 - Added `idEntity` method.
 
+### Fixed
+
+- Fixed phpdoc annotations.
+
+### Changed
+
+- Providers static methods now non-static.
+
 ## v1.2.0
 
 ### Added

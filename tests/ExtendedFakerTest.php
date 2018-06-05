@@ -33,33 +33,6 @@ class ExtendedFakerTest extends AbstractTestCase
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
         ];
 
-        $methods = [
-            'carMarkAndModel',
-            'carMark',
-            'carModel',
-            'bodyCode',
-            'validBodyCode',
-            'invalidBodyCode',
-            'chassisCode',
-            'validChassisCode',
-            'invalidChassisCode',
-            'driverLicenseNumber',
-            'validDriverLicenseNumber',
-            'invalidDriverLicenseNumber',
-            'grzCode',
-            'validGrzCode',
-            'invalidGrzCode',
-            'ptsCode',
-            'validPtsCode',
-            'invalidPtsCode',
-            'stsCode',
-            'validStsCode',
-            'invalidStsCode',
-            'vinCode',
-            'validVinCode',
-            'invalidVinCode',
-        ];
-
         $class_content = \file_get_contents($path = __DIR__ . '/../src/ExtendedFaker.php');
 
         foreach ($mixins as $mixin) {
@@ -67,14 +40,6 @@ class ExtendedFakerTest extends AbstractTestCase
                 sprintf('~\@mixin.+%s$~m', \preg_quote($mixin, '/')),
                 $class_content,
                 "Mixin [{$mixin}] does not found in [{$path}]"
-            );
-        }
-
-        foreach ($methods as $method) {
-            $this->assertRegExp(
-                sprintf('~\@method\s\S+\s%s\(.*\)$~m', \preg_quote($method, '/')),
-                $class_content,
-                "Method [{$mixin}] does not found in [{$path}]"
             );
         }
     }

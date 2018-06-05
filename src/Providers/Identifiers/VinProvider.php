@@ -36,9 +36,9 @@ class VinProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function vinCode(...$arguments)
+    public function vinCode(...$arguments)
     {
-        return static::validVinCode(...$arguments);
+        return $this->validVinCode(...$arguments);
     }
 
     /**
@@ -48,7 +48,7 @@ class VinProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function validVinCode(...$arguments)
+    public function validVinCode(...$arguments)
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -64,14 +64,14 @@ class VinProvider extends AbstractIdentifierProvider
     {
         $code = '';
 
-        switch ($case = static::numberBetween(0, 1)) {
+        switch ($case = $this->numberBetween(0, 1)) {
             case 0:
-                $code = \mb_substr(static::vinCode(...$arguments), 0, -1);
+                $code = \mb_substr($this->vinCode(...$arguments), 0, -1);
                 break;
 
             case 1:
                 $code = \substr_replace(
-                    $code = static::vinCode(...$arguments),
+                    $code = $this->vinCode(...$arguments),
                     'I',
                     static::numberBetween(0, mb_strlen($code) - 1),
                     1

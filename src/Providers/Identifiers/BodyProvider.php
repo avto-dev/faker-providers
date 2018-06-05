@@ -44,9 +44,9 @@ class BodyProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function bodyCode(...$arguments)
+    public function bodyCode(...$arguments)
     {
-        return static::validBodyCode(...$arguments);
+        return $this->validBodyCode(...$arguments);
     }
 
     /**
@@ -56,7 +56,7 @@ class BodyProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function validBodyCode(...$arguments)
+    public function validBodyCode(...$arguments)
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -68,18 +68,18 @@ class BodyProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function invalidBodyCode(...$arguments)
+    public function invalidBodyCode(...$arguments)
     {
         $code = '';
         $case = static::numberBetween(0, 1);
 
         switch ($case) {
             case 0:
-                $code = static::bodyCode(...$arguments) . \str_repeat($case, 10);
+                $code = $this->bodyCode(...$arguments) . \str_repeat($case, 10);
                 break;
 
             case 1:
-                $code = \mb_substr(static::bodyCode(...$arguments), 0, 6);
+                $code = \mb_substr($this->bodyCode(...$arguments), 0, 6);
                 break;
         }
 

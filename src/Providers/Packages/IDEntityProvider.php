@@ -28,37 +28,37 @@ class IDEntityProvider extends AbstractFakerProvider
             case IDEntity::ID_TYPE_VIN:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class);
 
-                return IDEntity::make($this->generator->vinCode, $id_type);
+                return IDEntity::make($this->generator->vinCode(), $id_type);
 
             case IDEntity::ID_TYPE_GRZ:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider::class);
 
-                return IDEntity::make($this->generator->grzCode, $id_type);
+                return IDEntity::make($this->generator->grzCode(), $id_type);
 
             case IDEntity::ID_TYPE_STS:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\StsProvider::class);
 
-                return IDEntity::make($this->generator->stsCode, $id_type);
+                return IDEntity::make($this->generator->stsCode(), $id_type);
 
             case IDEntity::ID_TYPE_PTS:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider::class);
 
-                return IDEntity::make($this->generator->ptsCode, $id_type);
+                return IDEntity::make($this->generator->ptsCode(), $id_type);
 
             case IDEntity::ID_TYPE_BODY:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider::class);
 
-                return IDEntity::make($this->generator->bodyCode, $id_type);
+                return IDEntity::make($this->generator->bodyCode(), $id_type);
 
             case IDEntity::ID_TYPE_CHASSIS:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider::class);
 
-                return IDEntity::make($this->generator->chassisCode, $id_type);
+                return IDEntity::make($this->generator->chassisCode(), $id_type);
 
             case IDEntity::ID_TYPE_DRIVER_LICENSE_NUMBER:
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider::class);
 
-                return IDEntity::make($this->generator->driverLicenseNumber, $id_type);
+                return IDEntity::make($this->generator->driverLicenseNumber(), $id_type);
         }
 
         // @codeCoverageIgnoreStart

@@ -37,9 +37,9 @@ class StsProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function stsCode(...$arguments)
+    public function stsCode(...$arguments)
     {
-        return static::validStsCode(...$arguments);
+        return $this->validStsCode(...$arguments);
     }
 
     /**
@@ -49,7 +49,7 @@ class StsProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function validStsCode(...$arguments)
+    public function validStsCode(...$arguments)
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -61,18 +61,18 @@ class StsProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function invalidStsCode(...$arguments)
+    public function invalidStsCode(...$arguments)
     {
         $code = '';
         $case = static::numberBetween(0, 1);
 
         switch ($case) {
             case 0:
-                $code = static::stsCode(...$arguments) . $case;
+                $code = $this->stsCode(...$arguments) . $case;
                 break;
 
             case 1:
-                $code = mb_substr(static::stsCode(...$arguments), 0, -1);
+                $code = \mb_substr($this->stsCode(...$arguments), 0, -1);
                 break;
         }
 

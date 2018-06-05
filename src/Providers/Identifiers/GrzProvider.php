@@ -46,9 +46,9 @@ class GrzProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function grzCode(...$arguments)
+    public function grzCode(...$arguments)
     {
-        return static::validGrzCode(...$arguments);
+        return $this->validGrzCode(...$arguments);
     }
 
     /**
@@ -58,7 +58,7 @@ class GrzProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function validGrzCode(...$arguments)
+    public function validGrzCode(...$arguments)
     {
         return str_replace(
             'REG',
@@ -74,9 +74,9 @@ class GrzProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function invalidGrzCode(...$arguments)
+    public function invalidGrzCode(...$arguments)
     {
-        $code = static::grzCode(...$arguments);
+        $code = $this->grzCode(...$arguments);
 
         switch (static::numberBetween(0, 2)) {
             case 0:

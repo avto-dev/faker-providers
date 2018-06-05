@@ -40,11 +40,11 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
      */
     protected static function replaceWildcard($string, $wildcard = '#', $callback = 'static::randomDigit')
     {
-        $length = mb_strlen($string);
+        $length = \mb_strlen($string);
         $chars  = [];
 
         for ($i = 0; $i < $length; $i++) {
-            $chars[] = mb_substr($string, $i, 1);
+            $chars[] = \mb_substr($string, $i, 1);
         }
 
         $chars[] = '';

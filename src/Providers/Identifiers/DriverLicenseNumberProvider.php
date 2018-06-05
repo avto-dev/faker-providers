@@ -46,9 +46,9 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function driverLicenseNumber(...$arguments)
+    public function driverLicenseNumber(...$arguments)
     {
-        return static::validDriverLicenseNumber(...$arguments);
+        return $this->validDriverLicenseNumber(...$arguments);
     }
 
     /**
@@ -58,7 +58,7 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function validDriverLicenseNumber(...$arguments)
+    public function validDriverLicenseNumber(...$arguments)
     {
         return str_replace(
             'REG',
@@ -74,7 +74,7 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public static function invalidDriverLicenseNumber(...$arguments)
+    public function invalidDriverLicenseNumber(...$arguments)
     {
         static $invalid_formats = [
             '####?#',
