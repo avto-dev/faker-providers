@@ -10,11 +10,11 @@ use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 class IDEntityProviderTest extends AbstractProviderTestCase
 {
     /**
-     * Test car mark generation method.
+     * Test idEntity generation method.
      *
      * @return void
      */
-    public function testCarMark()
+    public function testIdEntity()
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             foreach (IDEntity::getSupportedTypes() as $id_type) {
