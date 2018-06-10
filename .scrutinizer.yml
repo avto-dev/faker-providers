@@ -10,7 +10,7 @@ checks:
     duplication: true
 
 build_failure_conditions:
-  - 'elements.rating(<= D).exists'                                # No classes/methods with a rating of D or worse
+# - 'elements.rating(<= D).exists'                                # No classes/methods with a rating of D or worse
   - 'project.metric_change("scrutinizer.test_coverage", < -0.05)' # Coverage decreased from prev. inspection > 5%
 
 build:
