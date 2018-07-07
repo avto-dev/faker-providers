@@ -13,6 +13,8 @@
 [![License][badge_license]][link_license]
 [![Downloads count][badge_downloads_count]][link_packagist]
 
+> This version is no longer supported.
+
 Данный пакет поставляет набор дополнительных провайдеров, которые расширяют базовые возможности пакета [faker][faker]. Так же он содержит готовый сервис-провайдер для интеграции с фреймворком Laravel.
 
 ## Установка
