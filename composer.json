@@ -23,8 +23,8 @@
         "fzaninotto/faker": "~1.4"
     },
     "require-dev": {
-        "avto-dev/extended-laravel-validator": "^1.1.2",
-        "avto-dev/identity-laravel": "^2.1",
+        "avto-dev/extended-laravel-validator": "^2.0",
+        "avto-dev/identity-laravel": "^3.0",
         "laravel/laravel": ">=5.4.0 <5.7.0",
         "phpunit/phpunit": "~5.7.10 || ^6.4 || ~7.0",
         "symfony/var-dumper": "~3.2 || ^4.0"
@@ -51,7 +51,7 @@
         }
     },
     "suggest": {
-        "avto-dev/identity-laravel": "[Laravel] Adds supports for a working with IDEntity package (^2.1)"
+        "avto-dev/identity-laravel": "[Laravel] Adds supports for a working with IDEntity package (^3.0)"
     },
     "support": {
         "issues": "https://github.com/avto-dev/faker-providers/issues",
