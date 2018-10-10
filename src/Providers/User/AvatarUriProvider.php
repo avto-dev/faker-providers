@@ -10,7 +10,7 @@ class AvatarUriProvider extends AbstractFakerProvider
 {
 
     /**
-     * Api url ui-avatars.com
+     * Api url placebeard.it.
      *
      * @link https://placebeard.it
      *
@@ -20,7 +20,7 @@ class AvatarUriProvider extends AbstractFakerProvider
 
 
     /**
-     * Get link to user avatar
+     * Get link to user avatar.
      *
      * @param int $size
      *
@@ -28,11 +28,8 @@ class AvatarUriProvider extends AbstractFakerProvider
      */
     public function userAvatarUri($size = 150)
     {
-
-        return static::$avatar_url.'/'.$size;
-
+        return static::$avatar_url . '/' . $size;
     }
-
 
 }
 

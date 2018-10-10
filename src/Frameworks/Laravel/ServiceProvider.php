@@ -108,7 +108,6 @@ class ServiceProvider extends IlluminateServiceProvider
             \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
 
             \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider::class,
-
         ];
     }
 }

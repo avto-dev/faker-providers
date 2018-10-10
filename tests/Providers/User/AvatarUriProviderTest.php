@@ -16,7 +16,7 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
     public function testUserAvatarUri()
     {
         $size = '150';
-        $url = AvatarUriProvider::$avatar_url.'/'.$size;
+        $url = 'https://placebeard.it/'.$size;
         $this->assertStringStartsWith(AvatarUriProvider::$avatar_url, $url);
         $this->assertContains($size, $url);
     }
