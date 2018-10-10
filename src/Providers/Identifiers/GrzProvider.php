@@ -16,7 +16,13 @@ class GrzProvider extends AbstractIdentifierProvider
      */
     protected static $formats = [
         '?###??REG',
+        '?###??REG_LONG',
+        '??###REG',
         '####??REG',
+        '??####REG',
+        '?####REG',
+        '###?REG',
+        '####?REG',
     ];
 
     /**
@@ -29,14 +35,21 @@ class GrzProvider extends AbstractIdentifierProvider
     ];
 
     /**
-     * Regions codes.
+     * Regions codes (2 digits).
      *
      * @var string[]|int[]
      */
     protected static $regions = [
-        66, 69, 13,
+        66, 69, 13, '02', '03', '01',
+    ];
+
+    /**
+     * Regions codes (3 digits).
+     *
+     * @var string[]|int[]
+     */
+    protected static $regions_long = [
         777, 102, 113,
-        '02', '03', '01',
     ];
 
     /**
@@ -61,8 +74,14 @@ class GrzProvider extends AbstractIdentifierProvider
     public function validGrzCode(...$arguments)
     {
         return str_replace(
-            'REG',
-            static::randomElement(static::$regions),
+            [
+                'REG_LONG',
+                'REG',
+            ],
+            [
+                static::randomElement(static::$regions_long),
+                static::randomElement(static::$regions),
+            ],
             self::bothify(static::randomElement(static::$formats))
         );
     }

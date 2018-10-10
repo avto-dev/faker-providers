@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.1.0
+
+### Added
+
+- `AvatarUriProvider` faker provider for random avatars URI generation.
+
+### Changed
+
+- Maximal laravel version now is `5.7`
+
+## v2.0.0
+
+### Changed
+
+- Minimal `avto-dev/extended-laravel-validator` package version now is `2.0`
+- Minimal `avto-dev/identity-laravel` package version now is `3.0`
+- New `grz` code formats (based on GOST)
+
 ## v1.3.0
 
 ### Added
