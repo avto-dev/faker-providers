@@ -7,7 +7,6 @@ use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 class AvatarUriProviderTest extends AbstractProviderTestCase
 {
-
     /**
      * Test user avatar uri method method.
      *
@@ -16,7 +15,7 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
     public function testUserAvatarUri()
     {
         $size = '150';
-        $url = 'https://placebeard.it/'.$size;
+        $url = 'https://placebeard.it/' . $size;
         $this->assertStringStartsWith(AvatarUriProvider::$avatar_url, $url);
         $this->assertContains($size, $url);
     }
@@ -39,5 +38,4 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
     {
         return AvatarUriProvider::class;
     }
-
 }

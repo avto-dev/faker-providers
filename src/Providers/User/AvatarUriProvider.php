@@ -1,6 +1,7 @@
 <?php
 
 namespace AvtoDev\FakerProviders\Providers\User;
+
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 
 /**
@@ -8,7 +9,6 @@ use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
  */
 class AvatarUriProvider extends AbstractFakerProvider
 {
-
     /**
      * Api url placebeard.it.
      *
@@ -30,6 +30,4 @@ class AvatarUriProvider extends AbstractFakerProvider
     {
         return static::$avatar_url . '/' . $size;
     }
-
 }
-
