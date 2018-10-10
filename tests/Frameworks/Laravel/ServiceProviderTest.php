@@ -44,6 +44,9 @@ class ServiceProviderTest extends IlluminateTestCase
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
 
             \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
+
+            \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider::class,
+
         ];
 
         foreach ($providers as $provider_class) {
