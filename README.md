@@ -186,6 +186,15 @@ $faker->idEntity('VIN'); // object:TypedIDEntityInterface (type 'VIN')
 $faker->idEntity;        // object:TypedIDEntityInterface (random type)
 ```
 
+### `AvtoDev\FakerProviders\Providers\User\AvatarUriProvider`
+
+```php
+<?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
+
+$faker->userAvatarUri(100);   // Link to user avatar
+```
+
+
 ### Testing
 
 For package testing we use `phpunit` framework. Just write into your terminal:
