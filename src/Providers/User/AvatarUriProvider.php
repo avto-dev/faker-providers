@@ -18,7 +18,6 @@ class AvatarUriProvider extends AbstractFakerProvider
      */
     public static $avatar_url = 'https://placebeard.it';
 
-
     /**
      * Get link to user avatar.
      *
