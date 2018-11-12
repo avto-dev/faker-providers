@@ -2,8 +2,8 @@
 
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
-use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 use Faker\Provider\Miscellaneous;
+use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 
 /**
  * Class InnAndKppProvider.
