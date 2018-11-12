@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.x.x
+
+### Added
+
+- `InnAndKppProvider` faker provider for random INN and KPP codes.
+
 ## v2.1.0
 
 ### Added

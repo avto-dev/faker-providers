@@ -15,6 +15,7 @@ use LogicException;
  * @mixin \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider
  * @mixin \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider
  * @mixin \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider
+ * @mixin \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider
  */
 class ExtendedFaker extends \Faker\Generator
 {
