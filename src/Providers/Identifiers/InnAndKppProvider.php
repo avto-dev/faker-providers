@@ -2,8 +2,8 @@
 
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
-use Faker\Provider\Miscellaneous;
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
+use Faker\Provider\Miscellaneous;
 
 /**
  * Class InnAndKppProvider.
@@ -14,7 +14,7 @@ use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 class InnAndKppProvider extends AbstractFakerProvider
 {
     /**
-     * White-list chars that can be used in INN code.
+     * White-list chars that can be used in KPP code.
      *
      * @var string[]
      */
