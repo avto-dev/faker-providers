@@ -58,6 +58,8 @@ $ php artisan vendor:publish --provider="AvtoDev\FakerProviders\Frameworks\Larav
 - Номер водительского удостоверения;
 - Марку и модель ТС;
 - Объект IDEntity (необходима установка дополнительного пакета [avto-dev/identity-laravel][identity]).
+- Ссылку на аватар пользователя
+- ИНН и КПП организации
 
 Для использования того или иного провайдера вам необходимо его сперва загрузить:
 
@@ -173,6 +175,21 @@ $faker->invalidVinCode; // 728GY9PAGGSH443220
 
 $faker->driverLicenseNumber;        // 66 ВС 167633
 $faker->invalidDriverLicenseNumber; // 6802О3
+```
+
+### `AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider`
+
+```php
+<?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
+
+$faker->innCode(); // 6449013711 500100732259
+$faker->shortInnCode(); // 3664069397
+$faker->longInnCode(); // 500100732259
+$faker->validInnCode(); // 6449013711
+$faker->invalidInnCode(); // 6449013712
+$faker->kppCode(); // 644901371
+$faker->validKppCode(); // 773301001 7733AZ001
+$faker->invalidKppCode(); // 7733010011 77330100Z
 ```
 
 ### `AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider`

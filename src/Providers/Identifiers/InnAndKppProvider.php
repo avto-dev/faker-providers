@@ -14,7 +14,7 @@ use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 class InnAndKppProvider extends AbstractFakerProvider
 {
     /**
-     * White-list chars that can be used in INN code.
+     * White-list chars that can be used in KPP code.
      *
      * @var string[]
      */
