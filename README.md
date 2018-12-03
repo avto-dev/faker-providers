@@ -8,7 +8,7 @@
 [![Version][badge_php_version]][link_packagist]
 [![Build Status][badge_build_status]][link_build_status]
 [![Coverage][badge_coverage]][link_coverage]
-[![Code quality][badge_code_quality]][link_coverage]
+[![Code quality][badge_code_quality]][link_code_quality]
 [![Downloads count][badge_downloads_count]][link_packagist]
 [![License][badge_license]][link_license]
 
@@ -19,7 +19,7 @@
 Для установки данного пакета выполните в терминале следующую команду:
 
 ```shell
-$ composer require --dev avto-dev/faker-providers "^2.0"
+$ composer require --dev avto-dev/faker-providers "^2.3"
 ```
 
 > Для этого необходим установленный `composer`. Для его установки перейдите по [данной ссылке][getcomposer].
@@ -247,22 +247,23 @@ If you will find any package errors, please, [make an issue][link_create_issue] 
 
 This is open-sourced software licensed under the [MIT License][link_license].
 
-[badge_packagist_version]:https://img.shields.io/packagist/v/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
-[badge_php_version]:https://img.shields.io/packagist/php-v/avto-dev/faker-providers.svg?style=flat-square&longCache=true
-[badge_build_status]:https://img.shields.io/scrutinizer/build/g/avto-dev/faker-providers.svg?style=flat-square&maxAge=180&logo=scrutinizer
-[badge_code_quality]:https://img.shields.io/scrutinizer/g/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
-[badge_coverage]:https://img.shields.io/scrutinizer/coverage/g/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
-[badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
-[badge_license]:https://img.shields.io/packagist/l/avto-dev/faker-providers.svg?style=flat-square&longCache=true
+[badge_packagist_version]:https://img.shields.io/packagist/v/avto-dev/faker-providers.svg?maxAge=180
+[badge_php_version]:https://img.shields.io/packagist/php-v/avto-dev/faker-providers.svg?longCache=true
+[badge_build_status]:https://travis-ci.org/avto-dev/faker-providers.svg?branch=master
+[badge_code_quality]:https://img.shields.io/scrutinizer/g/avto-dev/faker-providers.svg?maxAge=180
+[badge_coverage]:https://img.shields.io/codecov/c/github/avto-dev/faker-providers/master.svg?maxAge=60
+[badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/faker-providers.svg?maxAge=180
+[badge_license]:https://img.shields.io/packagist/l/avto-dev/faker-providers.svg?longCache=true
 [badge_release_date]:https://img.shields.io/github/release-date/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
 [badge_commits_since_release]:https://img.shields.io/github/commits-since/avto-dev/faker-providers/latest.svg?style=flat-square&maxAge=180
 [badge_issues]:https://img.shields.io/github/issues/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
 [badge_pulls]:https://img.shields.io/github/issues-pr/avto-dev/faker-providers.svg?style=flat-square&maxAge=180
 [link_releases]:https://github.com/avto-dev/faker-providers/releases
 [link_packagist]:https://packagist.org/packages/avto-dev/faker-providers
-[link_build_status]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/build-status/master
-[link_coverage]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/?branch=master
+[link_build_status]:https://travis-ci.org/avto-dev/faker-providers
+[link_coverage]:https://codecov.io/gh/avto-dev/faker-providers/
 [link_changes_log]:https://github.com/avto-dev/faker-providers/blob/master/CHANGELOG.md
+[link_code_quality]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/
 [link_issues]:https://github.com/avto-dev/faker-providers/issues
 [link_create_issue]:https://github.com/avto-dev/faker-providers/issues/new/choose
 [link_commits]:https://github.com/avto-dev/faker-providers/commits
