@@ -1,9 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests;
 
 use AvtoDev\FakerProviders\ExtendedFaker;
 
+/**
+ * @covers \AvtoDev\FakerProviders\ExtendedFaker
+ */
 class ExtendedFakerTest extends AbstractTestCase
 {
     /**
@@ -11,7 +16,7 @@ class ExtendedFakerTest extends AbstractTestCase
      *
      * @return void
      */
-    public function testConstructorThrownException()
+    public function testConstructorThrownException(): void
     {
         $this->expectException(\LogicException::class);
         $this->expectExceptionMessageRegExp('~just for IDE~i');
@@ -24,7 +29,7 @@ class ExtendedFakerTest extends AbstractTestCase
      *
      * @return void
      */
-    public function testPhpDocs()
+    public function testPhpDocs(): void
     {
         $mixins = [
             \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider::class,
@@ -38,6 +43,8 @@ class ExtendedFakerTest extends AbstractTestCase
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
 
             \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
+            \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider::class,
         ];
 
         $class_content = \file_get_contents($path = __DIR__ . '/../src/ExtendedFaker.php');

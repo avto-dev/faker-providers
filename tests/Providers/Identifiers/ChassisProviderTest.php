@@ -1,17 +1,22 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use Closure;
 use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider<extended>
+ */
 class ChassisProviderTest extends AbstractIdentifierTestCase
 {
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return ChassisProvider::class;
     }
@@ -19,9 +24,9 @@ class ChassisProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getValidIdentifier()
+    protected function getValidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->chassisCode
             : $this->faker->chassisCode();
     }
@@ -29,9 +34,9 @@ class ChassisProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getInvalidIdentifier()
+    protected function getInvalidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->invalidChassisCode
             : $this->faker->invalidChassisCode();
     }
@@ -39,7 +44,7 @@ class ChassisProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function validatorRule()
+    protected function validatorRule(): string
     {
         return 'string|chassis_code';
     }
@@ -49,9 +54,9 @@ class ChassisProviderTest extends AbstractIdentifierTestCase
      *
      * @return Closure
      */
-    protected function validationCallback()
+    protected function validationCallback(): Closure
     {
-        return function ($identifier) {
+        return function ($identifier): bool {
             return IDEntity::make($identifier, IDEntity::ID_TYPE_CHASSIS)->isValid();
         };
     }

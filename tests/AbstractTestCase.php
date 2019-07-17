@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests;
 
-use PHPUnit\Framework\TestCase as BaseTestCase;
-
-abstract class AbstractTestCase extends BaseTestCase
+abstract class AbstractTestCase extends \PHPUnit\Framework\TestCase
 {
     /**
      * Most important test cases repeats count.

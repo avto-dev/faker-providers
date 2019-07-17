@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 /**
- * @property-read string driverLicenseNumber
- * @property-read string validDriverLicenseNumber
- * @property-read string invalidDriverLicenseNumber
+ * @property-read string $driverLicenseNumber
+ * @property-read string $validDriverLicenseNumber
+ * @property-read string $invalidDriverLicenseNumber
  */
 class DriverLicenseNumberProvider extends AbstractIdentifierProvider
 {

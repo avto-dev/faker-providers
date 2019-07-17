@@ -1,17 +1,22 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use Closure;
 use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider<extended>
+ */
 class GrzProviderTest extends AbstractIdentifierTestCase
 {
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return GrzProvider::class;
     }
@@ -19,9 +24,9 @@ class GrzProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getValidIdentifier()
+    protected function getValidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->grzCode
             : $this->faker->grzCode();
     }
@@ -29,9 +34,9 @@ class GrzProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getInvalidIdentifier()
+    protected function getInvalidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->invalidGrzCode
             : $this->faker->invalidGrzCode();
     }
@@ -39,7 +44,7 @@ class GrzProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function validatorRule()
+    protected function validatorRule(): string
     {
         return 'string|grz_code';
     }
@@ -49,9 +54,9 @@ class GrzProviderTest extends AbstractIdentifierTestCase
      *
      * @return Closure
      */
-    protected function validationCallback()
+    protected function validationCallback(): Closure
     {
-        return function ($identifier) {
+        return function ($identifier): bool {
             return IDEntity::make($identifier, IDEntity::ID_TYPE_GRZ)->isValid();
         };
     }

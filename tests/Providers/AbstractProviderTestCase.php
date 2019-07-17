@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers;
 
 use Faker\Generator as FakerGenerator;
@@ -18,7 +20,7 @@ abstract class AbstractProviderTestCase extends AbstractTestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -33,7 +35,7 @@ abstract class AbstractProviderTestCase extends AbstractTestCase
      *
      * @return void
      */
-    public function testProviderLoaded()
+    public function testProviderLoaded(): void
     {
         $loaded = \array_map('get_class', $this->faker->getProviders());
 
@@ -45,5 +47,5 @@ abstract class AbstractProviderTestCase extends AbstractTestCase
      *
      * @return string
      */
-    abstract protected function providerClass();
+    abstract protected function providerClass(): string;
 }

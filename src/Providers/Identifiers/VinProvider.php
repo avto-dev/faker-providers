@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 /**
- * @property-read string vinCode
- * @property-read string validVinCode
- * @property-read string invalidVinCode
+ * @property-read string $vinCode
+ * @property-read string $validVinCode
+ * @property-read string $invalidVinCode
  */
 class VinProvider extends AbstractIdentifierProvider
 {

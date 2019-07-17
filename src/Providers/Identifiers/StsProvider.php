@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 /**
- * @property-read string stsCode
- * @property-read string validStsCode
- * @property-read string invalidStsCode
+ * @property-read string $stsCode
+ * @property-read string $validStsCode
+ * @property-read string $invalidStsCode
  */
 class StsProvider extends AbstractIdentifierProvider
 {

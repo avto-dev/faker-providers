@@ -2,29 +2,28 @@
   <img src="https://hsto.org/webt/0v/qb/0p/0vqb0pp6ntyyd8mbdkkj0wsllwo.png" alt="Laravel" width="70" height="70" />
 </p>
 
-# Провайдеры генераторов для пакета [faker][faker]
+# Additional providers for [faker][faker]
 
 [![Version][badge_packagist_version]][link_packagist]
 [![Version][badge_php_version]][link_packagist]
 [![Build Status][badge_build_status]][link_build_status]
 [![Coverage][badge_coverage]][link_coverage]
-[![Code quality][badge_code_quality]][link_code_quality]
 [![Downloads count][badge_downloads_count]][link_packagist]
 [![License][badge_license]][link_license]
 
-Данный пакет поставляет набор дополнительных провайдеров, которые расширяют базовые возможности пакета [faker][faker]. Так же он содержит готовый сервис-провайдер для интеграции с фреймворком Laravel.
+This package provides set of additional providers for [faker][faker] package. Also it provides service-provider for Laravel framework.
 
-## Установка
+## Install
 
-Для установки данного пакета выполните в терминале следующую команду:
+Require this package with composer using the following command:
 
-```shell
-$ composer require --dev avto-dev/faker-providers "^2.3"
+```bash
+$ composer require --dev avto-dev/faker-providers "^3.0"
 ```
 
-> Для этого необходим установленный `composer`. Для его установки перейдите по [данной ссылке][getcomposer].
+> Installed `composer` is required ([how to install composer][getcomposer]).
 
-> Обратите внимание на то, что необходимо фиксировать мажорную версию устанавливаемого пакета.
+> You need to fix the major version of package.
 
 ### Интеграция с Laravel
 
@@ -221,12 +220,12 @@ $faker->userAvatarUri('Bill Gates', 200, 200); // Link to the some user avatar
 
 ### Testing
 
-For package testing we use `phpunit` framework. Just write into your terminal:
+For package testing we use `phpunit` framework and `docker-ce` + `docker-compose` as develop environment. So, just write into your terminal after repository cloning:
 
-```shell
-$ git clone git@github.com:avto-dev/faker-providers.git ./faker-providers && cd $_
-$ composer install
-$ composer test
+```bash
+$ make build
+$ make latest # or 'make lowest'
+$ make test
 ```
 
 ## Changes log
@@ -250,7 +249,6 @@ This is open-sourced software licensed under the [MIT License][link_license].
 [badge_packagist_version]:https://img.shields.io/packagist/v/avto-dev/faker-providers.svg?maxAge=180
 [badge_php_version]:https://img.shields.io/packagist/php-v/avto-dev/faker-providers.svg?longCache=true
 [badge_build_status]:https://travis-ci.org/avto-dev/faker-providers.svg?branch=master
-[badge_code_quality]:https://img.shields.io/scrutinizer/g/avto-dev/faker-providers.svg?maxAge=180
 [badge_coverage]:https://img.shields.io/codecov/c/github/avto-dev/faker-providers/master.svg?maxAge=60
 [badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/faker-providers.svg?maxAge=180
 [badge_license]:https://img.shields.io/packagist/l/avto-dev/faker-providers.svg?longCache=true
@@ -263,7 +261,6 @@ This is open-sourced software licensed under the [MIT License][link_license].
 [link_build_status]:https://travis-ci.org/avto-dev/faker-providers
 [link_coverage]:https://codecov.io/gh/avto-dev/faker-providers/
 [link_changes_log]:https://github.com/avto-dev/faker-providers/blob/master/CHANGELOG.md
-[link_code_quality]:https://scrutinizer-ci.com/g/avto-dev/faker-providers/
 [link_issues]:https://github.com/avto-dev/faker-providers/issues
 [link_create_issue]:https://github.com/avto-dev/faker-providers/issues/new/choose
 [link_commits]:https://github.com/avto-dev/faker-providers/commits

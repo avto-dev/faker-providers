@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Packages;
 
 use AvtoDev\IDEntity\IDEntity;
@@ -7,7 +9,7 @@ use AvtoDev\IDEntity\Types\TypedIDEntityInterface;
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 
 /**
- * @property-read TypedIDEntityInterface idEntity
+ * @property-read TypedIDEntityInterface $idEntity
  */
 class IDEntityProvider extends AbstractFakerProvider
 {
@@ -18,7 +20,7 @@ class IDEntityProvider extends AbstractFakerProvider
      *
      * @return TypedIDEntityInterface
      */
-    public function idEntity($id_type = null)
+    public function idEntity(?string $id_type = null): TypedIDEntityInterface
     {
         $id_type = IDEntity::typeIsSupported($id_type)
             ? $id_type
@@ -70,10 +72,12 @@ class IDEntityProvider extends AbstractFakerProvider
      * Load faker provider if needed.
      *
      * @param string $provider_class
+     *
+     * @return void
      */
-    private function lazyLoad($provider_class)
+    private function lazyLoad(string $provider_class): void
     {
-        $loaded = \array_map('get_class', $this->generator->getProviders());
+        $loaded = \array_map('\\get_class', $this->generator->getProviders());
 
         if (! \in_array($provider_class, $loaded, true)) {
             $this->generator->addProvider(new $provider_class($this->generator));

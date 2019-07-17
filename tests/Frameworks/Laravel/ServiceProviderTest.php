@@ -1,11 +1,16 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Frameworks\Laravel;
 
 use Faker\Generator as FakerGenerator;
 use Illuminate\Foundation\Testing\TestCase as IlluminateTestCase;
 use AvtoDev\FakerProviders\Tests\Traits\CreatesLaravelApplicationTrait;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider
+ */
 class ServiceProviderTest extends IlluminateTestCase
 {
     use CreatesLaravelApplicationTrait;
@@ -18,7 +23,7 @@ class ServiceProviderTest extends IlluminateTestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -30,7 +35,7 @@ class ServiceProviderTest extends IlluminateTestCase
      *
      * @return void
      */
-    public function testFakerProvidersRegistered()
+    public function testFakerProvidersRegistered(): void
     {
         $providers = [
             \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider::class,
@@ -61,7 +66,7 @@ class ServiceProviderTest extends IlluminateTestCase
      *
      * @return void
      */
-    public function testConfigFakerProvidersRegistered()
+    public function testConfigFakerProvidersRegistered(): void
     {
         $providers = [
             \Faker\Provider\ru_RU\Address::class,

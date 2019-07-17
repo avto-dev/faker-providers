@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 /**
- * @property-read string bodyCode
- * @property-read string validBodyCode
- * @property-read string invalidBodyCode
+ * @property-read string $bodyCode
+ * @property-read string $validBodyCode
+ * @property-read string $invalidBodyCode
  */
 class BodyProvider extends AbstractIdentifierProvider
 {
@@ -75,7 +77,7 @@ class BodyProvider extends AbstractIdentifierProvider
 
         switch ($case) {
             case 0:
-                $code = $this->bodyCode(...$arguments) . \str_repeat($case, 10);
+                $code = $this->bodyCode(...$arguments) . \str_repeat((string) $case, 10);
                 break;
 
             case 1:

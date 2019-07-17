@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 /**
- * @property-read string chassisCode
- * @property-read string validChassisCode
- * @property-read string invalidChassisCode
+ * @property-read string $chassisCode
+ * @property-read string $validChassisCode
+ * @property-read string $invalidChassisCode
  */
 class ChassisProvider extends BodyProvider
 {

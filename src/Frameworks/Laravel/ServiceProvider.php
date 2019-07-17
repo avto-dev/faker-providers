@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Frameworks\Laravel;
 
 use Faker\Generator as FakerGenerator;
@@ -13,9 +15,9 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return string
      */
-    public static function getConfigRootKeyName()
+    public static function getConfigRootKeyName(): string
     {
-        return basename(static::getConfigPath(), '.php');
+        return \basename(static::getConfigPath(), '.php');
     }
 
     /**
@@ -23,7 +25,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return string
      */
-    public static function getConfigPath()
+    public static function getConfigPath(): string
     {
         return __DIR__ . '/config/faker.php';
     }
@@ -33,7 +35,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    public function boot(FakerGenerator $generator)
+    public function boot(FakerGenerator $generator): void
     {
         foreach ($this->fakerProviders() as $provider_class) {
             $generator->addProvider(new $provider_class($generator));
@@ -45,7 +47,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->initializeConfigs();
     }
@@ -55,7 +57,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    protected function initializeConfigs()
+    protected function initializeConfigs(): void
     {
         $this->mergeConfigFrom(static::getConfigPath(), static::getConfigRootKeyName());
 
@@ -69,7 +71,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return string[]
      */
-    protected function fakerProviders()
+    protected function fakerProviders(): array
     {
         return \array_unique(\array_merge($this->packageProviders(), $this->userDefinedProviders()));
     }
@@ -79,7 +81,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return string[]
      */
-    protected function userDefinedProviders()
+    protected function userDefinedProviders(): array
     {
         /** @var ConfigRepository $config */
         $config = $this->app->make('config');
@@ -92,11 +94,10 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return string[]
      */
-    protected function packageProviders()
+    protected function packageProviders(): array
     {
         return [
             \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider::class,
-
             \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider::class,
@@ -104,11 +105,8 @@ class ServiceProvider extends IlluminateServiceProvider
             \AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider::class,
-
             \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
-
             \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider::class,
-
             \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider::class,
         ];
     }

@@ -1,10 +1,15 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Cars;
 
 use AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider<extended>
+ */
 class MarkAndModelProviderTest extends AbstractProviderTestCase
 {
     /**
@@ -12,7 +17,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testCarMark()
+    public function testCarMark(): void
     {
         $valid = \array_keys(MarkAndModelProvider::$car_marks_and_models);
 
@@ -27,7 +32,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testCarModel()
+    public function testCarModel(): void
     {
         $summary = [];
 
@@ -51,7 +56,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testCarMarkAndModel()
+    public function testCarMarkAndModel(): void
     {
         $models = [];
 
@@ -95,7 +100,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testCarGeneration()
+    public function testCarGeneration(): void
     {
         $valid = \array_keys(MarkAndModelProvider::$car_generations);
 
@@ -108,7 +113,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return MarkAndModelProvider::class;
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders;
 
 use LogicException;
@@ -20,7 +22,7 @@ use LogicException;
 class ExtendedFaker extends \Faker\Generator
 {
     /**
-     * ExtendedFaker constructor.
+     * Create a new ExtendedFaker instance.
      *
      * @throws LogicException
      */

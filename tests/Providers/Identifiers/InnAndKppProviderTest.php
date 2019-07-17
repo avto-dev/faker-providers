@@ -1,25 +1,23 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 /**
- * @coversDefaultClass \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider<extended>
  */
 class InnAndKppProviderTest extends AbstractProviderTestCase
 {
     /**
      * Test inn code generation method.
      *
-     * @covers ::innCode()
-     * @covers ::generateInnCode()
-     * @covers ::checksum()
-     *
      * @return void
      */
-    public function testInnCode()
+    public function testInnCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->innCode();
@@ -30,11 +28,9 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * Test valid inn code generation method with different lengths.
      *
-     * @covers ::validInnCode()
-     *
      * @return void
      */
-    public function testValidInnCode()
+    public function testValidInnCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->validInnCode();
@@ -45,11 +41,9 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * Test short inn code generation method.
      *
-     * @covers ::shortInnCode()
-     *
      * @return void
      */
-    public function testShortInnCode()
+    public function testShortInnCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->shortInnCode();
@@ -61,11 +55,9 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * Test long inn code generation method.
      *
-     * @covers ::longInnCode()
-     *
      * @return void
      */
-    public function testLongInnCode()
+    public function testLongInnCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->longInnCode();
@@ -77,11 +69,9 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * Test invalid inn code generation method.
      *
-     * @covers ::invalidInnCode()
-     *
      * @return void
      */
-    public function testInvalidInnCode()
+    public function testInvalidInnCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->invalidInnCode();
@@ -92,12 +82,9 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * Test kpp code generation method.
      *
-     * @covers ::kppCode()
-     * @covers ::validKppCode()
-     *
      * @return void
      */
-    public function testKppCode()
+    public function testKppCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $kppCode = $this->faker->kppCode();
@@ -108,11 +95,9 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * Test invalid kpp code generation method.
      *
-     * @covers ::invalidKppCode()
-     *
      * @return void
      */
-    public function testInvalidKppCode()
+    public function testInvalidKppCode(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $kppCode = $this->faker->invalidKppCode();
@@ -127,7 +112,7 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
      *
      * @return bool
      */
-    protected function isValidInn($inn)
+    protected function isValidInn($inn): bool
     {
         $innLength = \mb_strlen($inn);
         switch ($innLength) {
@@ -154,7 +139,7 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
      *
      * @return bool
      */
-    protected function isValidKpp($kpp)
+    protected function isValidKpp($kpp): bool
     {
         return (bool) preg_match('/^\d{4}[0-9A-Z]{2}\d{3}$/', $kpp);
     }
@@ -166,7 +151,7 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
      *
      * @return int
      */
-    protected function checksum($inn)
+    protected function checksum($inn): int
     {
         $coefficients     = [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8];
         $innLength        = \mb_strlen($inn);
@@ -182,7 +167,7 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return InnAndKppProvider::class;
     }

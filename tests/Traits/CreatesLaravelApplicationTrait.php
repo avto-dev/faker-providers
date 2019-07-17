@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Traits;
 
 use Illuminate\Contracts\Console\Kernel;
-use AvtoDev\IDEntity\IDEntitiesServiceProvider;
+use AvtoDev\IDEntity\ServiceProvider as IDEntitiesServiceProvider;
 use AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider;
-use AvtoDev\ExtendedLaravelValidator\ExtendedValidatorServiceProvider;
+use AvtoDev\ExtendedLaravelValidator\ServiceProvider as ExtendedValidatorServiceProvider;
 
 trait CreatesLaravelApplicationTrait
 {
@@ -18,9 +20,6 @@ trait CreatesLaravelApplicationTrait
     {
         /** @var \Illuminate\Foundation\Application $app */
         $app = require __DIR__ . '/../../vendor/laravel/laravel/bootstrap/app.php';
-
-        // $app->useStoragePath(...);
-        // $app->loadEnvironmentFrom(...);
 
         $app->make(Kernel::class)->bootstrap();
 

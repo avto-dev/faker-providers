@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Cars;
 
 use AvtoDev\IDEntity\IDEntity;
@@ -7,6 +9,9 @@ use AvtoDev\IDEntity\Types\TypedIDEntityInterface;
 use AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider<extended>
+ */
 class IDEntityProviderTest extends AbstractProviderTestCase
 {
     /**
@@ -14,7 +19,7 @@ class IDEntityProviderTest extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testIdEntity()
+    public function testIdEntity(): void
     {
         for ($i = 0; $i < $this->repeats_count; $i++) {
             foreach (IDEntity::getSupportedTypes() as $id_type) {
@@ -33,7 +38,7 @@ class IDEntityProviderTest extends AbstractProviderTestCase
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return IDEntityProvider::class;
     }
