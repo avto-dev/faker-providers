@@ -24,7 +24,7 @@ class IDEntityProvider extends AbstractFakerProvider
     {
         $id_type = IDEntity::typeIsSupported($id_type)
             ? $id_type
-            : $this->generator->randomElement(IDEntity::getSupportedTypes());
+            : $this->generator->randomElement(...[IDEntity::getSupportedTypes()]);
 
         switch ($id_type) {
             case IDEntity::ID_TYPE_VIN:
