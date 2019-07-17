@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 /**
- * @property-read string grzCode
- * @property-read string validGrzCode
- * @property-read string invalidGrzCode
+ * @property-read string $grzCode
+ * @property-read string $validGrzCode
+ * @property-read string $invalidGrzCode
  */
 class GrzProvider extends AbstractIdentifierProvider
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use Closure;
@@ -25,7 +27,7 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -39,7 +41,7 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testValidUsingValidator()
+    public function testValidUsingValidator(): void
     {
         $rule         = $this->validatorRule();
         $callback     = $this->validationCallback();
@@ -62,7 +64,7 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
      *
      * @return void
      */
-    public function testInvalidUsingValidator()
+    public function testInvalidUsingValidator(): void
     {
         $rule         = $this->validatorRule();
         $callback     = $this->validationCallback();
@@ -85,21 +87,21 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
      *
      * @return string
      */
-    abstract protected function getValidIdentifier();
+    abstract protected function getValidIdentifier(): string;
 
     /**
      * Get INVALID identifier value.
      *
      * @return string
      */
-    abstract protected function getInvalidIdentifier();
+    abstract protected function getInvalidIdentifier(): string;
 
     /**
      * Get rule for validator checking.
      *
      * @return string
      */
-    protected function validatorRule()
+    protected function validatorRule(): string
     {
         return 'string|required';
     }
@@ -109,7 +111,8 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
      *
      * @return Closure|null
      */
-    protected function validationCallback()
+    protected function validationCallback(): ?Closure
     {
+        return null;
     }
 }

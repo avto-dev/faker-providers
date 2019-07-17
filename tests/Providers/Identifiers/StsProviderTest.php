@@ -1,17 +1,22 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use Closure;
 use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\StsProvider;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider<extended>
+ */
 class StsProviderTest extends AbstractIdentifierTestCase
 {
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return StsProvider::class;
     }
@@ -19,9 +24,9 @@ class StsProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getValidIdentifier()
+    protected function getValidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->stsCode
             : $this->faker->stsCode();
     }
@@ -29,9 +34,9 @@ class StsProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getInvalidIdentifier()
+    protected function getInvalidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->invalidStsCode
             : $this->faker->invalidStsCode();
     }
@@ -39,7 +44,7 @@ class StsProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function validatorRule()
+    protected function validatorRule(): string
     {
         return 'string|sts_code';
     }
@@ -49,9 +54,9 @@ class StsProviderTest extends AbstractIdentifierTestCase
      *
      * @return Closure
      */
-    protected function validationCallback()
+    protected function validationCallback(): Closure
     {
-        return function ($identifier) {
+        return function ($identifier): bool {
             return IDEntity::make($identifier, IDEntity::ID_TYPE_STS)->isValid();
         };
     }

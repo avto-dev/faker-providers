@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Identifiers;
 
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
@@ -21,7 +23,7 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
     public static function bothify($string = '## ??')
     {
         $string = self::replaceWildcard($string, '*', function () {
-            return mt_rand(0, 1)
+            return \random_int(0, 1)
                 ? '#'
                 : '?';
         });
@@ -51,7 +53,7 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
         $result  = '';
 
         foreach ($chars as $current_char) {
-            if ($current_char === $wildcard) {
+            if ($current_char === $wildcard && \is_callable($callback)) {
                 $current_char = \call_user_func($callback);
             }
             $result .= $current_char;

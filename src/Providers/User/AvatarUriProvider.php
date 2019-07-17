@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\User;
 
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 
 /**
- * @property-read string userAvatarUri
+ * @property-read string $userAvatarUri
  */
 class AvatarUriProvider extends AbstractFakerProvider
 {

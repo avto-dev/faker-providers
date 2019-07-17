@@ -1,21 +1,23 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Providers\Cars;
 
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 
 /**
- * @property-read string carMarkAndModel
- * @property-read string carMark
- * @property-read string carModel
- * @property-read string carGeneration
+ * @property-read string $carMarkAndModel
+ * @property-read string $carMark
+ * @property-read string $carModel
+ * @property-read string $carGeneration
  */
 class MarkAndModelProvider extends AbstractFakerProvider
 {
     /**
      * Allowed car marks and models.
      *
-     * @var string[]
+     * @var array[]
      */
     public static $car_marks_and_models = [
         'Acura'        => ['CL', 'CSX', 'EL', 'ILX'],

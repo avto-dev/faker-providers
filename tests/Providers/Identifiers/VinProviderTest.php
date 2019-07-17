@@ -1,17 +1,22 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use Closure;
 use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\VinProvider;
 
+/**
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider<extended>
+ */
 class VinProviderTest extends AbstractIdentifierTestCase
 {
     /**
      * {@inheritdoc}
      */
-    protected function providerClass()
+    protected function providerClass(): string
     {
         return VinProvider::class;
     }
@@ -19,9 +24,9 @@ class VinProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getValidIdentifier()
+    protected function getValidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->vinCode
             : $this->faker->vinCode();
     }
@@ -29,9 +34,9 @@ class VinProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function getInvalidIdentifier()
+    protected function getInvalidIdentifier(): string
     {
-        return mt_rand(0, 1) === 1
+        return \random_int(0, 1) === 1
             ? $this->faker->invalidVinCode
             : $this->faker->invalidVinCode();
     }
@@ -39,7 +44,7 @@ class VinProviderTest extends AbstractIdentifierTestCase
     /**
      * {@inheritdoc}
      */
-    protected function validatorRule()
+    protected function validatorRule(): string
     {
         return 'string|vin_code';
     }
@@ -49,9 +54,9 @@ class VinProviderTest extends AbstractIdentifierTestCase
      *
      * @return Closure
      */
-    protected function validationCallback()
+    protected function validationCallback(): Closure
     {
-        return function ($identifier) {
+        return function ($identifier): bool {
             return IDEntity::make($identifier, IDEntity::ID_TYPE_VIN)->isValid();
         };
     }

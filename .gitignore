@@ -12,7 +12,6 @@ composer.lock
 /temp
 /tmp
 /install
-/build
 /coverage
 .DS_Store
 .php_cs.cache
