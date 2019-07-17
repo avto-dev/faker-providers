@@ -10,12 +10,14 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 - Docker-based environment for development
 - Project `Makefile`
+- `declare(strict_types = 1)` into each class
 
 ### Changed
 
 - Minimal `PHP` version now is `^7.1.3`
 - Maximal `Laravel` version now is `5.8.x`
 - Composer scripts
+- **Method signatures in classes now type-hinted (where it possible)**
 
 ## v2.3.0
 
