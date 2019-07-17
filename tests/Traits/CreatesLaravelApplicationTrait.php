@@ -5,8 +5,8 @@ declare(strict_types = 1);
 namespace AvtoDev\FakerProviders\Tests\Traits;
 
 use Illuminate\Contracts\Console\Kernel;
-use AvtoDev\IDEntity\ServiceProvider as IDEntitiesServiceProvider;
 use AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider;
+use AvtoDev\IDEntity\ServiceProvider as IDEntitiesServiceProvider;
 use AvtoDev\ExtendedLaravelValidator\ServiceProvider as ExtendedValidatorServiceProvider;
 
 trait CreatesLaravelApplicationTrait
