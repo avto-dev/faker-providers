@@ -18,6 +18,7 @@ use LogicException;
  * @mixin \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider
  * @mixin \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider
  * @mixin \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider
+ * @mixin \AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider
  */
 class ExtendedFaker extends \Faker\Generator
 {
