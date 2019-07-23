@@ -45,6 +45,7 @@ class ExtendedFakerTest extends AbstractTestCase
             \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider::class,
             \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider::class,
             \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider::class,
         ];
 
         $class_content = \file_get_contents($path = __DIR__ . '/../src/ExtendedFaker.php');

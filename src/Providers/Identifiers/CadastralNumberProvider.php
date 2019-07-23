@@ -12,6 +12,24 @@ namespace AvtoDev\FakerProviders\Providers\Identifiers;
 class CadastralNumberProvider extends AbstractIdentifierProvider
 {
     /**
+     * List of available regions.
+     *
+     * @var array
+     */
+    protected $regions = [
+        91, 66, 50, 30, 20, '09', '01',
+    ];
+
+    /**
+     * List of available districts.
+     *
+     * @var array
+     */
+    protected $districts = [
+        '05', '04', '03', '02', '01',
+    ];
+
+    /**
      * @return string
      */
     public function cadastralNumber()
@@ -26,7 +44,12 @@ class CadastralNumberProvider extends AbstractIdentifierProvider
      */
     public function validCadastralNumber()
     {
-        return static::regexify('/^[0-9]{2}:[0-9]{2}:[0-9]{6,7}:[0-9]{1,6}$/');
+        return \sprintf('%s:%s:%s:%s',
+            static::randomElement($this->regions),
+            static::randomElement($this->districts),
+            static::randomNumber(\mt_rand(6, 7), true),
+            static::randomNumber(\mt_rand(1, 6), true)
+        );
     }
 
     /**
