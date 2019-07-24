@@ -53,6 +53,7 @@ class ServiceProviderTest extends IlluminateTestCase
             \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider::class,
 
             \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider::class,
+            \AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider::class,
 
         ];
 

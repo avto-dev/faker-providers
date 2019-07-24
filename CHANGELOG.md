@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## v3.1.0
+
+### Added
+
+- `CadastralNumberProvider` faker provider for random cadastral numbers.
+
 ## v3.0.0
 
 ### Added

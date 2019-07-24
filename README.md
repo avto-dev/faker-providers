@@ -59,6 +59,7 @@ $ php artisan vendor:publish --provider="AvtoDev\FakerProviders\Frameworks\Larav
 - Объект IDEntity (необходима установка дополнительного пакета [avto-dev/identity-laravel][identity]).
 - Ссылку на аватар пользователя
 - ИНН и КПП организации
+- Кадастровый номер объекта недвижимости
 
 Для использования того или иного провайдера вам необходимо его сперва загрузить:
 
@@ -189,6 +190,16 @@ $faker->invalidInnCode(); // 6449013712
 $faker->kppCode(); // 644901371
 $faker->validKppCode(); // 773301001 7733AZ001
 $faker->invalidKppCode(); // 7733010011 77330100Z
+```
+
+### `AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider`
+
+```php
+<?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
+
+$faker->cadastralNumber(); // 66:41:153222:68
+$faker->validCadastralNumber(); // 77:22:5874698:1
+$faker->invalidCadastralNumber(); // 879:404:313:446
 ```
 
 ### `AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider`
