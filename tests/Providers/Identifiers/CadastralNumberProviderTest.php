@@ -4,11 +4,12 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
+use Closure;
+use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider;
 
 /**
  * @covers \AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider<extended>
- * @group  Eldar
  */
 class CadastralNumberProviderTest extends AbstractIdentifierTestCase
 {
@@ -46,5 +47,17 @@ class CadastralNumberProviderTest extends AbstractIdentifierTestCase
     protected function validatorRule(): string
     {
         return 'string|cadastral_number';
+    }
+
+    /**
+     * Get custom validation callback.
+     *
+     * @return Closure
+     */
+    protected function validationCallback(): Closure
+    {
+        return function ($identifier): bool {
+            return IDEntity::make($identifier, IDEntity::ID_TYPE_CADASTRAL_NUMBER)->isValid();
+        };
     }
 }

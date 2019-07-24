@@ -61,6 +61,11 @@ class IDEntityProvider extends AbstractFakerProvider
                 $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider::class);
 
                 return IDEntity::make($this->generator->driverLicenseNumber(), $id_type);
+
+            case IDEntity::ID_TYPE_CADASTRAL_NUMBER:
+                $this->lazyLoad(\AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider::class);
+
+                return IDEntity::make($this->generator->cadastralNumber(), $id_type);
         }
 
         // @codeCoverageIgnoreStart

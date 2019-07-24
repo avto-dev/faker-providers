@@ -24,7 +24,7 @@
     },
     "require-dev": {
         "avto-dev/extended-laravel-validator": "^3.0",
-        "avto-dev/identity-laravel": "^4.0",
+        "avto-dev/identity-laravel": "^4.1",
         "laravel/laravel": ">=5.4.0 <5.9.0",
         "phpstan/phpstan": "^0.11.3",
         "phpunit/phpunit": "~5.7.10 || ^6.4 || ~7.5"
