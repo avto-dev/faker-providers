@@ -4,7 +4,9 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Frameworks\Laravel;
 
+use Faker\Factory as FakerFactory;
 use Faker\Generator as FakerGenerator;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
@@ -50,6 +52,25 @@ class ServiceProvider extends IlluminateServiceProvider
     public function register(): void
     {
         $this->initializeConfigs();
+
+        if (! $this->app->bound(FakerGenerator::class)) {
+            $this->registerFakerGenerator();
+        }
+    }
+
+    /**
+     * Register faker generator.
+     *
+     * @return void
+     */
+    protected function registerFakerGenerator(): void
+    {
+        $this->app->singleton(FakerGenerator::class, static function (Container $app) {
+            /** @var ConfigRepository $config */
+            $config = $app->make(ConfigRepository::class);
+
+            return FakerFactory::create($config->get('app.faker_locale', 'en_US'));
+        });
     }
 
     /**
@@ -86,7 +107,7 @@ class ServiceProvider extends IlluminateServiceProvider
         /** @var ConfigRepository $config */
         $config = $this->app->make('config');
 
-        return (array) $config->get(sprintf('%s.providers', static::getConfigRootKeyName()));
+        return (array) $config->get(static::getConfigRootKeyName() . '.providers');
     }
 
     /**

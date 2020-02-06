@@ -2,6 +2,5 @@ parameters:
   level: 'max'
   ignoreErrors:
     - '#Call to an undefined method Faker\\Generator::\w+\(\)#'
-  reportUnmatchedIgnoredErrors: false
   paths:
     - src

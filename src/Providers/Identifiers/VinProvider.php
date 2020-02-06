@@ -34,11 +34,11 @@ class VinProvider extends AbstractIdentifierProvider
     /**
      * Generate vin code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function vinCode(...$arguments)
+    public function vinCode(...$arguments): string
     {
         return $this->validVinCode(...$arguments);
     }
@@ -46,11 +46,11 @@ class VinProvider extends AbstractIdentifierProvider
     /**
      * Generate vin code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validVinCode(...$arguments)
+    public function validVinCode(...$arguments): string
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -58,11 +58,11 @@ class VinProvider extends AbstractIdentifierProvider
     /**
      * Generate invalid vin code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidVinCode(...$arguments)
+    public function invalidVinCode(...$arguments): string
     {
         $code = '';
 

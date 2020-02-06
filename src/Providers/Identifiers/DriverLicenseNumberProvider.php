@@ -44,11 +44,11 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
     /**
      * Generate driver license number.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function driverLicenseNumber(...$arguments)
+    public function driverLicenseNumber(...$arguments): string
     {
         return $this->validDriverLicenseNumber(...$arguments);
     }
@@ -56,11 +56,11 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
     /**
      * Generate valid driver license number.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validDriverLicenseNumber(...$arguments)
+    public function validDriverLicenseNumber(...$arguments): string
     {
         return str_replace(
             'REG',
@@ -72,11 +72,11 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
     /**
      * Generate invalid driver license number.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidDriverLicenseNumber(...$arguments)
+    public function invalidDriverLicenseNumber(...$arguments): string
     {
         static $invalid_formats = [
             '####?#',

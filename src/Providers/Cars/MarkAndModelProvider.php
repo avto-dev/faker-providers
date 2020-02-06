@@ -17,7 +17,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
     /**
      * Allowed car marks and models.
      *
-     * @var array[]
+     * @var array<string, array<string>>
      */
     public static $car_marks_and_models = [
         'Acura'        => ['CL', 'CSX', 'EL', 'ILX'],
@@ -60,7 +60,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function carMarkAndModel()
+    public function carMarkAndModel(): string
     {
         return sprintf('%s %s', $mark = $this->carMark(), $this->carModel($mark));
     }
@@ -70,7 +70,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function carMark()
+    public function carMark(): string
     {
         return static::randomElement(\array_keys(static::$car_marks_and_models));
     }
@@ -82,11 +82,9 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function carModel($mark = null)
+    public function carModel($mark = null): string
     {
-        return static::randomElement(static::$car_marks_and_models[$mark === null
-            ? $this->carMark()
-            : $mark]);
+        return static::randomElement(static::$car_marks_and_models[$mark ?? $this->carMark()]);
     }
 
     /**
@@ -94,7 +92,7 @@ class MarkAndModelProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function carGeneration()
+    public function carGeneration(): string
     {
         return static::randomElement(static::$car_generations);
     }

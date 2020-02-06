@@ -42,7 +42,7 @@ class GrzProvider extends AbstractIdentifierProvider
      * @var string[]|int[]
      */
     protected static $regions = [
-        66, 69, 13, '02', '03', '01',
+        66, 69, 13, '02', '03', '01', 78, 98, 77, 97, 99, 86, 89, 95, 21, 22
     ];
 
     /**
@@ -51,17 +51,17 @@ class GrzProvider extends AbstractIdentifierProvider
      * @var string[]|int[]
      */
     protected static $regions_long = [
-        777, 102, 113,
+        777, 102, 113, 102, 111, 112, 113, 116, 716, 121, 123, 124, 125, 126, 197, 199, 799, 178
     ];
 
     /**
      * Generate random GRZ code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function grzCode(...$arguments)
+    public function grzCode(...$arguments): string
     {
         return $this->validGrzCode(...$arguments);
     }
@@ -69,13 +69,13 @@ class GrzProvider extends AbstractIdentifierProvider
     /**
      * Generate random GRZ code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validGrzCode(...$arguments)
+    public function validGrzCode(...$arguments): string
     {
-        return str_replace(
+        return \str_replace(
             [
                 'REG_LONG',
                 'REG',
@@ -91,20 +91,20 @@ class GrzProvider extends AbstractIdentifierProvider
     /**
      * Generate invalid GRZ code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidGrzCode(...$arguments)
+    public function invalidGrzCode(...$arguments): string
     {
         $code = $this->grzCode(...$arguments);
 
         switch (static::numberBetween(0, 2)) {
             case 0:
-                return mb_substr($code, 0, 2);
+                return \mb_substr($code, 0, 2);
 
             case 1:
-                return mb_substr($code, -4);
+                return \mb_substr($code, -4);
 
             default:
                 return $code . static::numberBetween(10, 20);

@@ -9,7 +9,7 @@ use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
 abstract class AbstractIdentifierProvider extends AbstractFakerProvider
 {
     /**
-     * @var array chars to use
+     * @var string[] chars to use
      */
     protected static $chars = [];
 
@@ -20,10 +20,10 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public static function bothify($string = '## ??')
+    public static function bothify($string = '## ??'): string
     {
-        $string = self::replaceWildcard($string, '*', function () {
-            return \random_int(0, 1)
+        $string = self::replaceWildcard($string, '*', static function () {
+            return \random_int(0, 1) === 1
                 ? '#'
                 : '?';
         });
@@ -40,7 +40,7 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    protected static function replaceWildcard($string, $wildcard = '#', $callback = 'static::randomDigit')
+    protected static function replaceWildcard($string, $wildcard = '#', $callback = 'static::randomDigit'): string
     {
         $length = \mb_strlen($string);
         $chars  = [];
@@ -69,7 +69,7 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    protected static function lexifyChars($string = '????')
+    protected static function lexifyChars($string = '????'): string
     {
         return self::replaceWildcard($string, '?', 'static::getChar');
     }
@@ -77,9 +77,9 @@ abstract class AbstractIdentifierProvider extends AbstractFakerProvider
     /**
      * Return one char from allowed range.
      *
-     * @return string
+     * @return string|null
      */
-    protected static function getChar()
+    protected static function getChar(): ?string
     {
         return static::randomElement(static::$chars);
     }

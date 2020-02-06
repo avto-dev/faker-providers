@@ -5,9 +5,6 @@ declare(strict_types = 1);
 namespace AvtoDev\FakerProviders\Tests\Traits;
 
 use Illuminate\Contracts\Console\Kernel;
-use AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider;
-use AvtoDev\IDEntity\ServiceProvider as IDEntitiesServiceProvider;
-use AvtoDev\ExtendedLaravelValidator\ServiceProvider as ExtendedValidatorServiceProvider;
 
 trait CreatesLaravelApplicationTrait
 {
@@ -23,9 +20,10 @@ trait CreatesLaravelApplicationTrait
 
         $app->make(Kernel::class)->bootstrap();
 
-        $app->register(ExtendedValidatorServiceProvider::class);
-        $app->register(IDEntitiesServiceProvider::class);
-        $app->register(ServiceProvider::class);
+        $app->register(\AvtoDev\ExtendedLaravelValidator\ServiceProvider::class);
+        $app->register(\AvtoDev\StaticReferences\ServiceProvider::class);
+        $app->register(\AvtoDev\IDEntity\ServiceProvider::class);
+        $app->register(\AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider::class);
 
         return $app;
     }

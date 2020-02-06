@@ -56,7 +56,7 @@ class DriverLicenseNumberProviderTest extends AbstractIdentifierTestCase
      */
     protected function validationCallback(): CLosure
     {
-        return function ($identifier): bool {
+        return static function ($identifier): bool {
             return IDEntity::make($identifier, IDEntity::ID_TYPE_DRIVER_LICENSE_NUMBER)->isValid();
         };
     }

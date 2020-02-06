@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Additional Faker Providers Classes
@@ -11,8 +10,8 @@ return [
     | the faker instance. Feel free to add your own providers to this array.
     |
     */
+
     'providers' => [
         \Faker\Provider\ru_RU\Address::class,
     ],
-
 ];

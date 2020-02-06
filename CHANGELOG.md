@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## v3.2.0
+
+### Changed
+
+- Maximal `illuminate/*` packages version now is `~6.0`
+- Minimal `illuminate/*` packages version now is `^5.5`
+- Dev-dependencies `phpstan/phpstan` and `phpunit/phpunit` updated
+- `styleci.io` rules
+- Return type in methods _(where it possible)_
+
+### Added
+
+- GitHub Actions for a tests running
+- PHP 7.4 support
+- [Laravel] `Faker\Generator` registration as a singleton in service provider _(if it was not bound previously)_
+- `avto-dev/identity-laravel` package version `^5.0` supports
+- New region codes for `GrzProvider`
+
+### Fixed
+
+- Invalid cadastral number generation
+
 ## v3.1.0
 
 ### Added

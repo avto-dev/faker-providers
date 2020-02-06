@@ -22,7 +22,7 @@ class IDEntityProvider extends AbstractFakerProvider
      */
     public function idEntity(?string $id_type = null): TypedIDEntityInterface
     {
-        $id_type = IDEntity::typeIsSupported($id_type)
+        $id_type = \is_string($id_type) && IDEntity::typeIsSupported($id_type)
             ? $id_type
             : $this->generator->randomElement(...[IDEntity::getSupportedTypes()]);
 

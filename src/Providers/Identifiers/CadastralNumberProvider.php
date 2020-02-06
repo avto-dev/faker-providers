@@ -12,27 +12,27 @@ namespace AvtoDev\FakerProviders\Providers\Identifiers;
 class CadastralNumberProvider extends AbstractIdentifierProvider
 {
     /**
-     * List of available regions.
+     * List of available districts.
      *
-     * @var array
+     * @var array<int>
      */
-    protected $regions = [
-        91, 66, 50, 30, 20, '09', '01',
+    protected $districts = [
+        91, 66, 50, 30, 20, 9, 1,
     ];
 
     /**
-     * List of available districts.
+     * List of available areas.
      *
-     * @var array
+     * @var array<int>
      */
-    protected $districts = [
-        '05', '04', '03', '02', '01',
+    protected $areas = [
+        1, 2, 3, 4, 5,
     ];
 
     /**
      * @return string
      */
-    public function cadastralNumber()
+    public function cadastralNumber(): string
     {
         return $this->validCadastralNumber();
     }
@@ -42,13 +42,13 @@ class CadastralNumberProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public function validCadastralNumber()
+    public function validCadastralNumber(): string
     {
-        return \sprintf('%s:%s:%s:%s',
-            static::randomElement($this->regions),
+        return \sprintf('%02d:%02d:%07d:%d',
             static::randomElement($this->districts),
-            static::randomNumber(\mt_rand(6, 7), true),
-            static::randomNumber(\mt_rand(1, 6), true)
+            static::randomElement($this->areas),
+            static::randomNumber(\random_int(6, 7), true),
+            static::randomNumber(\random_int(1, 6), true)
         );
     }
 
@@ -57,13 +57,13 @@ class CadastralNumberProvider extends AbstractIdentifierProvider
      *
      * @return string
      */
-    public function invalidCadastralNumber()
+    public function invalidCadastralNumber(): string
     {
         static $invalid_formats = [
-            '#:##:######?#:#?#####',
+            '#:9##:#######:####',
             '#:##:######?#/#?#####',
-            '#:##:###:#?#####',
-            '###:###:###:###',
+            '###:###:###:0',
+            '0:###:###:#',
         ];
 
         return self::bothify(static::randomElement($invalid_formats));

@@ -14,11 +14,11 @@ class ChassisProvider extends BodyProvider
     /**
      * Generate chassis code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function chassisCode(...$arguments)
+    public function chassisCode(...$arguments): string
     {
         return $this->validChassisCode(...$arguments);
     }
@@ -26,11 +26,11 @@ class ChassisProvider extends BodyProvider
     /**
      * Generate valid chassis code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validChassisCode(...$arguments)
+    public function validChassisCode(...$arguments): string
     {
         return $this->validBodyCode(...$arguments);
     }
@@ -38,11 +38,11 @@ class ChassisProvider extends BodyProvider
     /**
      * Generate invalid chassis code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidChassisCode(...$arguments)
+    public function invalidChassisCode(...$arguments): string
     {
         return $this->invalidBodyCode(...$arguments);
     }
