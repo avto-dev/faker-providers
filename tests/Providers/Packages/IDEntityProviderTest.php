@@ -25,7 +25,7 @@ class IDEntityProviderTest extends AbstractProviderTestCase
             foreach (IDEntity::getSupportedTypes() as $id_type) {
                 $id_entity = $this->faker->idEntity($id_type);
 
-                $this->assertEquals($id_type, $id_entity->getType());
+                $this->assertSame($id_type, $id_entity->getType());
                 $this->assertTrue($id_entity->isValid());
             }
 

@@ -42,7 +42,7 @@ class GrzProvider extends AbstractIdentifierProvider
      * @var string[]|int[]
      */
     protected static $regions = [
-        66, 69, 13, '02', '03', '01', 78, 98, 77, 97, 99, 86, 89, 95, 21, 22
+        66, 69, 13, '02', '03', '01', 78, 98, 77, 97, 99, 86, 89, 95, 21, 22,
     ];
 
     /**
@@ -51,7 +51,7 @@ class GrzProvider extends AbstractIdentifierProvider
      * @var string[]|int[]
      */
     protected static $regions_long = [
-        777, 102, 113, 102, 111, 112, 113, 116, 716, 121, 123, 124, 125, 126, 197, 199, 799, 178
+        777, 102, 113, 102, 111, 112, 113, 116, 716, 121, 123, 124, 125, 126, 197, 199, 799, 178,
     ];
 
     /**

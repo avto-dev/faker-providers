@@ -48,7 +48,7 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->shortInnCode();
             $this->assertTrue($this->isValidInn($innCode));
-            $this->assertEquals(10, \mb_strlen($innCode));
+            $this->assertSame(10, \mb_strlen($innCode));
         }
     }
 
@@ -62,7 +62,7 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $innCode = $this->faker->longInnCode();
             $this->assertTrue($this->isValidInn($innCode));
-            $this->assertEquals(12, \mb_strlen($innCode));
+            $this->assertSame(12, \mb_strlen($innCode));
         }
     }
 
