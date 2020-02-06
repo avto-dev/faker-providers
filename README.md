@@ -2,7 +2,7 @@
   <img src="https://hsto.org/webt/0v/qb/0p/0vqb0pp6ntyyd8mbdkkj0wsllwo.png" alt="Laravel" width="70" height="70" />
 </p>
 
-# Additional providers for [faker][faker]
+# Additional providers for [fzaninotto/faker][faker]
 
 [![Version][badge_packagist_version]][link_packagist]
 [![Version][badge_php_version]][link_packagist]
@@ -18,50 +18,26 @@ This package provides set of additional providers for [faker][faker] package. Al
 Require this package with composer using the following command:
 
 ```bash
-$ composer require --dev avto-dev/faker-providers "^3.0"
+$ composer require --dev avto-dev/faker-providers "^3.2"
 ```
 
 > Installed `composer` is required ([how to install composer][getcomposer]).
 
 > You need to fix the major version of package.
 
-### Интеграция с Laravel
+### Laravel integration
 
-Если вы используете Laravel версии 5.5 и выше, то сервис-провайдер данного пакета будет зарегистрирован автоматически. В противном случае вам необходимо самостоятельно зарегистрировать сервис-провайдер в секции `providers` файла `./config/app.php`:
-
-```php
-'providers' => [
-    // ...
-    AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider::class,
-]
-```
-
-После этого "опубликуйте" конфигурационный файл:
+After installation you **can** "publish" configuration file (`./config/faker.php`) using next command:
 
 ```shell
-$ php artisan vendor:publish --provider="AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider"
+$ ./artisan vendor:publish --provider="AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider"
 ```
 
-И произведите необходимые настройки в файле  `./config/faker.php`. При помощи конфигурационного файла вы так же можете удобно подключать свои провайдеры для faker.
+And add any additional faker providers in `./config/faker.php` configuration file, if you want.
 
-## Использование
+## Usage
 
-Пакет поставляется с провайдерами, которые умеют:
-
-- Государственный регистрационный номер (ГРЗ);
-- VIN-код ТС (транспортного средства);
-- Номер свидетельства о регистрации ТС (СТС);
-- Номер паспорта ТС (ПТС);
-- Номер кузова ТС;
-- Номер шасси ТС;
-- Номер водительского удостоверения;
-- Марку и модель ТС;
-- Объект IDEntity (необходима установка дополнительного пакета [avto-dev/identity-laravel][identity]).
-- Ссылку на аватар пользователя
-- ИНН и КПП организации
-- Кадастровый номер объекта недвижимости
-
-Для использования того или иного провайдера вам необходимо его сперва загрузить:
+For providers using you must register them at first:
 
 ```php
 <?php
@@ -77,19 +53,18 @@ $faker->addProvider(new $provider($faker));
 echo $faker->carMarkAndModel; // BMW X3
 ```
 
-Если же вы используете данный пакет с Laravel приложением, то все провайдеры загружаются автоматически. Пример использования:
+If you use this package in laravel application - all providers will be registered automatically. Then you can use all provided methods, for example, in model factory:
 
 ```php
 <?php // File: ./database/factories/CarFactory.php
 
 use App\Models\Car;
 use Faker\Generator as Faker;
-use AvtoDev\FakerProviders\ExtendedFaker;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 
 /** @var EloquentFactory $factory */
 $factory->define(Car::class, function (Faker $faker) {
-    /** @var Faker|ExtendedFaker $faker */
+    /** @var Faker|\AvtoDev\FakerProviders\ExtendedFaker $faker */
     return [
         'vin'   => $faker->vinCode,
         'mark'  => $mark = $faker->carMark,
@@ -98,11 +73,13 @@ $factory->define(Car::class, function (Faker $faker) {
 });
 ```
 
-> Конструкция `/** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */` необходима для корректного type-hinting в вашей IDE.
+> Comment `/** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */` is required for correct type-hinting
 
-## Провайдеры
+## Providers
 
-### `AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider`
+All providers located in `AvtoDev\FakerProviders\Providers` namespace.
+
+### `Cars\MarkAndModelProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -114,7 +91,7 @@ $faker->carModel('Honda'); // Civic Type R
 $faker->carGeneration;     // IV Restyling
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider`
+### `Identifiers\BodyProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -123,7 +100,7 @@ $faker->bodyCode;        // ILМ842 6262494
 $faker->invalidBodyCode; // 246553
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider`
+### `Identifiers\ChassisProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -132,7 +109,7 @@ $faker->chassisCode;        // СM3654637018
 $faker->invalidChassisCode; // 20567820000000000
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider`
+### `Identifiers\GrzProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -141,7 +118,7 @@ $faker->grzCode;        // Х133АМ02
 $faker->invalidGrzCode; // У777
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider`
+### `Identifiers\PtsProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -150,7 +127,7 @@ $faker->ptsCode;        // 80 30 518523
 $faker->invalidPtsCode; // 67ОМ3760020
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\StsProvider`
+### `Identifiers\StsProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -159,7 +136,7 @@ $faker->stsCode;        // 98РА409963
 $faker->invalidStsCode; // 47 77 6580290
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\VinProvider`
+### `Identifiers\VinProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -168,7 +145,7 @@ $faker->vinCode;        // LPFT634A62NV25411
 $faker->invalidVinCode; // 728GY9PAGGSH443220
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider`
+### `Identifiers\DriverLicenseNumberProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -177,34 +154,34 @@ $faker->driverLicenseNumber;        // 66 ВС 167633
 $faker->invalidDriverLicenseNumber; // 6802О3
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider`
+### `Identifiers\InnAndKppProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
 
-$faker->innCode(); // 6449013711 500100732259
-$faker->shortInnCode(); // 3664069397
-$faker->longInnCode(); // 500100732259
-$faker->validInnCode(); // 6449013711
+$faker->innCode();        // 6449013711 500100732259
+$faker->shortInnCode();   // 3664069397
+$faker->longInnCode();    // 500100732259
+$faker->validInnCode();   // 6449013711
 $faker->invalidInnCode(); // 6449013712
-$faker->kppCode(); // 644901371
-$faker->validKppCode(); // 773301001 7733AZ001
+$faker->kppCode();        // 644901371
+$faker->validKppCode();   // 773301001 7733AZ001
 $faker->invalidKppCode(); // 7733010011 77330100Z
 ```
 
-### `AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider`
+### `Identifiers\CadastralNumberProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
 
-$faker->cadastralNumber(); // 66:41:153222:68
-$faker->validCadastralNumber(); // 77:22:5874698:1
+$faker->cadastralNumber();        // 66:41:153222:68
+$faker->validCadastralNumber();   // 77:22:5874698:1
 $faker->invalidCadastralNumber(); // 879:404:313:446
 ```
 
-### `AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider`
+### `Packages\IDEntityProvider`
 
-> Необходима установка дополнительного пакета [avto-dev/identity-laravel][identity].
+> Package [avto-dev/identity-laravel][identity] is required for this.
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
@@ -213,7 +190,7 @@ $faker->idEntity('VIN'); // object:TypedIDEntityInterface (type 'VIN')
 $faker->idEntity;        // object:TypedIDEntityInterface (random type)
 ```
 
-### `AvtoDev\FakerProviders\Providers\User\AvatarUriProvider`
+### `User\AvatarUriProvider`
 
 ```php
 <?php /** @var \Faker\Generator|\AvtoDev\FakerProviders\ExtendedFaker $faker */
