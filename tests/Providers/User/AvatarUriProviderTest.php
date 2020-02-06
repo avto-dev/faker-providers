@@ -36,7 +36,7 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
         }
 
         // Two calls returns same result
-        $this->assertEquals(
+        $this->assertSame(
             $this->faker->userAvatarUri($same_value = 'foo bar baz'),
             $this->faker->userAvatarUri($same_value)
         );
