@@ -30,7 +30,7 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Added
 
-- `CadastralNumberProvider` faker provider for random cadastral numbers.
+- `CadastralNumberProvider` faker provider for random cadastral numbers
 
 ## v3.0.0
 
@@ -62,13 +62,13 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Added
 
-- `InnAndKppProvider` faker provider for random INN and KPP codes.
+- `InnAndKppProvider` faker provider for random INN and KPP codes
 
 ## v2.1.0
 
 ### Added
 
-- `AvatarUriProvider` faker provider for random avatars URI generation.
+- `AvatarUriProvider` faker provider for random avatars URI generation
 
 ### Changed
 
@@ -86,27 +86,27 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Added
 
-- Added `idEntity` method.
+- Added `idEntity` method
 
 ### Fixed
 
-- Fixed phpdoc annotations.
+- Fixed phpdoc annotations
 
 ### Changed
 
-- Providers static methods now non-static.
+- Providers static methods now non-static
 
 ## v1.2.0
 
 ### Added
 
-- Added `carGeneration` method.
+- Added `carGeneration` method
 
 ## v1.1.1
 
 ### Fixed
 
-- Laravel configuration file comments updated.
+- Laravel configuration file comments updated
 
 ## v1.1.0
 
