@@ -20,7 +20,7 @@ class AvatarUriProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function userAvatarUri($unique_salt = null, $width = 200, $height = 200)
+    public function userAvatarUri($unique_salt = null, $width = 200, $height = 200): string
     {
         $width     = (int) \abs($width);
         $height    = (int) \abs($height);

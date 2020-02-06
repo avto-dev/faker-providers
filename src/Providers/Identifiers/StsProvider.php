@@ -35,11 +35,11 @@ class StsProvider extends AbstractIdentifierProvider
     /**
      * Generate sts code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function stsCode(...$arguments)
+    public function stsCode(...$arguments): string
     {
         return $this->validStsCode(...$arguments);
     }
@@ -47,11 +47,11 @@ class StsProvider extends AbstractIdentifierProvider
     /**
      * Generate valid sts code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validStsCode(...$arguments)
+    public function validStsCode(...$arguments): string
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -59,11 +59,11 @@ class StsProvider extends AbstractIdentifierProvider
     /**
      * Generate invalid sts code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidStsCode(...$arguments)
+    public function invalidStsCode(...$arguments): string
     {
         $code = '';
         $case = static::numberBetween(0, 1);

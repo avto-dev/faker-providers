@@ -14,11 +14,11 @@ class PtsProvider extends StsProvider
     /**
      * Generate pts code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function ptsCode(...$arguments)
+    public function ptsCode(...$arguments): string
     {
         return $this->validPtsCode(...$arguments);
     }
@@ -26,11 +26,11 @@ class PtsProvider extends StsProvider
     /**
      * Generate valid pts code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validPtsCode(...$arguments)
+    public function validPtsCode(...$arguments): string
     {
         return $this->validStsCode(...$arguments);
     }
@@ -38,11 +38,11 @@ class PtsProvider extends StsProvider
     /**
      * Generate invalid pts code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidPtsCode(...$arguments)
+    public function invalidPtsCode(...$arguments): string
     {
         return $this->invalidStsCode(...$arguments);
     }

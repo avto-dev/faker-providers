@@ -46,7 +46,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function innCode()
+    public function innCode(): string
     {
         return $this->generateInnCode();
     }
@@ -56,7 +56,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function shortInnCode()
+    public function shortInnCode(): string
     {
         return $this->generateInnCode(10);
     }
@@ -66,7 +66,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function longInnCode()
+    public function longInnCode(): string
     {
         return $this->generateInnCode(12);
     }
@@ -76,7 +76,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function validInnCode()
+    public function validInnCode(): string
     {
         return $this->generateInnCode();
     }
@@ -86,7 +86,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function invalidInnCode()
+    public function invalidInnCode(): string
     {
         if (Miscellaneous::boolean()) {
             $code = $this->innCode();
@@ -106,7 +106,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function kppCode()
+    public function kppCode(): string
     {
         return $this->validKppCode();
     }
@@ -116,7 +116,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function validKppCode()
+    public function validKppCode(): string
     {
         return static::toUpper(static::bothify('####??###'));
     }
@@ -126,7 +126,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    public function invalidKppCode()
+    public function invalidKppCode(): string
     {
         if (Miscellaneous::boolean()) {
             $code = static::toLower(static::bothify('#######??'));
@@ -144,12 +144,10 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return string
      */
-    protected function generateInnCode($length = null)
+    protected function generateInnCode($length = null): string
     {
         $newInnCode = '';
-        $length     = $length === null
-            ? static::randomElement(self::$possibleLengths)
-            : $length;
+        $length     = $length ?? static::randomElement(self::$possibleLengths);
 
         $inn = static::numerify('%#########');
         switch ($length) {
@@ -175,7 +173,7 @@ class InnAndKppProvider extends AbstractFakerProvider
      *
      * @return int
      */
-    protected function checksum($inn, $start = 0)
+    protected function checksum($inn, $start = 0): int
     {
         $sum          = 0;
         $coefficients = \array_slice(self::$coefficients, $start);

@@ -56,7 +56,7 @@ class ChassisProviderTest extends AbstractIdentifierTestCase
      */
     protected function validationCallback(): Closure
     {
-        return function ($identifier): bool {
+        return static function ($identifier): bool {
             return IDEntity::make($identifier, IDEntity::ID_TYPE_CHASSIS)->isValid();
         };
     }

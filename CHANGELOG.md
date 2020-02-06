@@ -4,11 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## v3.2.0
+
+### Changed
+
+- Maximal `illuminate/*` packages version now is `~6.0`
+- Minimal `illuminate/*` packages version now is `^5.5`
+- Dev-dependencies `phpstan/phpstan` and `phpunit/phpunit` updated
+- `styleci.io` rules
+- Return type in methods _(where it possible)_
+
+### Added
+
+- GitHub Actions for a tests running
+- PHP 7.4 support
+- [Laravel] `Faker\Generator` registration as a singleton in service provider _(if it was not bound previously)_
+- `avto-dev/identity-laravel` package version `^5.0` supports
+- New region codes for `GrzProvider`
+
+### Fixed
+
+- Invalid cadastral number generation
+
 ## v3.1.0
 
 ### Added
 
-- `CadastralNumberProvider` faker provider for random cadastral numbers.
+- `CadastralNumberProvider` faker provider for random cadastral numbers
 
 ## v3.0.0
 
@@ -40,13 +62,13 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Added
 
-- `InnAndKppProvider` faker provider for random INN and KPP codes.
+- `InnAndKppProvider` faker provider for random INN and KPP codes
 
 ## v2.1.0
 
 ### Added
 
-- `AvatarUriProvider` faker provider for random avatars URI generation.
+- `AvatarUriProvider` faker provider for random avatars URI generation
 
 ### Changed
 
@@ -64,27 +86,27 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Added
 
-- Added `idEntity` method.
+- Added `idEntity` method
 
 ### Fixed
 
-- Fixed phpdoc annotations.
+- Fixed phpdoc annotations
 
 ### Changed
 
-- Providers static methods now non-static.
+- Providers static methods now non-static
 
 ## v1.2.0
 
 ### Added
 
-- Added `carGeneration` method.
+- Added `carGeneration` method
 
 ## v1.1.1
 
 ### Fixed
 
-- Laravel configuration file comments updated.
+- Laravel configuration file comments updated
 
 ## v1.1.0
 

@@ -42,11 +42,11 @@ class BodyProvider extends AbstractIdentifierProvider
     /**
      * Generate body code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function bodyCode(...$arguments)
+    public function bodyCode(...$arguments): string
     {
         return $this->validBodyCode(...$arguments);
     }
@@ -54,11 +54,11 @@ class BodyProvider extends AbstractIdentifierProvider
     /**
      * Generate valid body code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function validBodyCode(...$arguments)
+    public function validBodyCode(...$arguments): string
     {
         return self::bothify(static::randomElement(static::$formats));
     }
@@ -66,11 +66,11 @@ class BodyProvider extends AbstractIdentifierProvider
     /**
      * Generate invalid body code.
      *
-     * @param array ...$arguments
+     * @param array<mixed> ...$arguments
      *
      * @return string
      */
-    public function invalidBodyCode(...$arguments)
+    public function invalidBodyCode(...$arguments): string
     {
         $code = '';
         $case = static::numberBetween(0, 1);
