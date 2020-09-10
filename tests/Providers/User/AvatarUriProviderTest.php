@@ -31,7 +31,7 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
             $this->assertStringStartsWith('https', $uri);
             $this->assertStringContainsString((string) $width, $uri);
             $this->assertStringContainsString((string) $height, $uri);
-            $this->assertStringNotContainsString($uri, $stack); // Make sure that result is unique for each passed object
+            $this->assertNotContains($uri, $stack); // Make sure that result is unique for each passed object
             $stack[] = $uri;
         }
 
