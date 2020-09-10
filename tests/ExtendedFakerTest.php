@@ -19,7 +19,7 @@ class ExtendedFakerTest extends AbstractTestCase
     public function testConstructorThrownException(): void
     {
         $this->expectException(\LogicException::class);
-        $this->expectExceptionMessageRegExp('~just for IDE~i');
+        $this->expectExceptionMessageMatches('~just for IDE~i');
 
         new ExtendedFaker;
     }
