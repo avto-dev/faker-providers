@@ -102,7 +102,7 @@ class MarkAndModelProviderTest extends AbstractProviderTestCase
      */
     public function testCarGeneration(): void
     {
-        $valid = \array_keys(MarkAndModelProvider::$car_generations);
+        $valid = MarkAndModelProvider::$car_generations;
 
         for ($i = 0; $i < $this->repeats_count; $i++) {
             $this->assertContains($this->faker->carGeneration(), $valid);
