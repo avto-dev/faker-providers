@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Changed
 
+- Maximal `illuminate/*` packages version now is `~8.0`
+- Minimal `illuminate/*` packages version now is `~6.0`
 - CI completely moved from "Travis CI" to "Github Actions" _(travis builds disabled)_
 - Minimal required PHP version now is `7.2`
 
