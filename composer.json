@@ -17,16 +17,16 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2 || ^8.0",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "fzaninotto/faker": "~1.4"
+        "fzaninotto/faker": "~1.5"
     },
     "require-dev": {
         "avto-dev/extended-laravel-validator": "^3.0",
         "avto-dev/identity-laravel": "^4.1 || ^5.0",
         "laravel/laravel": "~6.0 || ~7.0 || ~8.0",
-        "phpstan/phpstan": "~0.12",
+        "phpstan/phpstan": "~0.12.34",
         "phpunit/phpunit": "^8.5.4 || ^9.3"
     },
     "autoload": {

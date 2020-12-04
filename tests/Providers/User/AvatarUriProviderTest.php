@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Tests\Providers\User;
 
-use Exception;
 use AvtoDev\FakerProviders\Providers\User\AvatarUriProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
@@ -55,18 +54,6 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
             $positive = (int) abs($value);
             $this->assertNotRegExp("~\-{$positive}~", $uri);
         }
-    }
-
-    /**
-     * Test exception thrown on wring size passing.
-     *
-     * @return void
-     */
-    public function testExceptionThrownOnWringSizePassing(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->faker->userAvatarUri('foo', new \stdClass);
     }
 
     /**
