@@ -2,7 +2,7 @@
   <img src="https://hsto.org/webt/0v/qb/0p/0vqb0pp6ntyyd8mbdkkj0wsllwo.png" alt="Laravel" width="70" height="70" />
 </p>
 
-# Additional providers for [fzaninotto/faker][faker]
+# Additional providers for [fakerphp/faker][faker]
 
 [![Version][badge_packagist_version]][link_packagist]
 [![PHP Version][badge_php_version]][link_packagist]
@@ -255,5 +255,5 @@ This is open-sourced software licensed under the [MIT License][link_license].
 [link_pulls]:https://github.com/avto-dev/faker-providers/pulls
 [link_license]:https://github.com/avto-dev/faker-providers/blob/master/LICENSE
 [getcomposer]:https://getcomposer.org/download/
-[faker]:https://github.com/fzaninotto/Faker
+[faker]:https://github.com/fakerphp/faker
 [identity]:https://github.com/avto-dev/identity-laravel
