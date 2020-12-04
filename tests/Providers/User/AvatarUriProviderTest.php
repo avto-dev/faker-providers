@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Tests\Providers\User;
 
-use Exception;
 use AvtoDev\FakerProviders\Providers\User\AvatarUriProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
