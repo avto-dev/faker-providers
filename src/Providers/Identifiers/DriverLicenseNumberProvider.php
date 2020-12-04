@@ -64,7 +64,7 @@ class DriverLicenseNumberProvider extends AbstractIdentifierProvider
     {
         return str_replace(
             'REG',
-            static::randomElement(static::$regions),
+            (string) static::randomElement(static::$regions),
             self::bothify(static::randomElement(static::$formats))
         );
     }

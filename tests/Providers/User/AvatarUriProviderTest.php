@@ -58,18 +58,6 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
     }
 
     /**
-     * Test exception thrown on wring size passing.
-     *
-     * @return void
-     */
-    public function testExceptionThrownOnWringSizePassing(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->faker->userAvatarUri('foo', new \stdClass);
-    }
-
-    /**
      * {@inheritdoc}
      */
     protected function providerClass(): string
