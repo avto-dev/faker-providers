@@ -51,7 +51,7 @@ class ExtendedFakerTest extends AbstractTestCase
         $class_content = \file_get_contents($path = __DIR__ . '/../src/ExtendedFaker.php');
 
         foreach ($mixins as $mixin) {
-            $this->assertRegExp(
+            $this->assertMatchesRegularExpression(
                 sprintf('~\@mixin.+%s$~m', \preg_quote($mixin, '/')),
                 $class_content,
                 "Mixin [{$mixin}] does not found in [{$path}]"

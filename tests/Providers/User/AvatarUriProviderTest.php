@@ -52,7 +52,7 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
             $uri = $this->faker->userAvatarUri(null, $value, $value);
 
             $positive = (int) abs($value);
-            $this->assertNotRegExp("~\-{$positive}~", $uri);
+            $this->assertDoesNotMatchRegularExpression("~\-{$positive}~", $uri);
         }
     }
 
