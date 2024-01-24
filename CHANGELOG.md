@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## Unreleased
+
+### Changed
+
+- Minimal PHP version now is `8.1`
+- Minimal Laravel version now is `10.0`
+- Minimal `fakerphp/faker` version now is `1.21`
+- Minimal `avto-dev/extended-laravel-validator` version now is `3.7`
+- Minimal `avto-dev/identity-laravel` version now is `5.7`
+- Minimal `phpstan/phpstan` version now is `1.10`
+- Minimal `phpunit/phpunit` version now is `10.5`
+- Version of `composer` in docker container updated up to `2.6.6`
+
 ## v3.5.0
 
 ### Added
