@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\VinProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\VinProvider
  */
 class VinProviderTest extends AbstractIdentifierTestCase
 {

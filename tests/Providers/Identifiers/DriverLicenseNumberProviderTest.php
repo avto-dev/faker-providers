@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider
  */
 class DriverLicenseNumberProviderTest extends AbstractIdentifierTestCase
 {

@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider
  */
 class GrzProviderTest extends AbstractIdentifierTestCase
 {

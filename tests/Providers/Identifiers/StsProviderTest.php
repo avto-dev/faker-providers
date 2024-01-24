@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\StsProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\StsProvider
  */
 class StsProviderTest extends AbstractIdentifierTestCase
 {

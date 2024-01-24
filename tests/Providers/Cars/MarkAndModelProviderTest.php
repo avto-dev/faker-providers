@@ -8,7 +8,7 @@ use AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider
  */
 class MarkAndModelProviderTest extends AbstractProviderTestCase
 {

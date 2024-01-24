@@ -8,7 +8,7 @@ use AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider
  */
 class InnAndKppProviderTest extends AbstractProviderTestCase
 {
@@ -120,13 +120,11 @@ class InnAndKppProviderTest extends AbstractProviderTestCase
                 $checksum = $this->checksum($inn);
 
                 return $checksum === (int) \mb_substr($inn, -1);
-                break;
             case 12:
                 $inn11 = $this->checksum(\mb_substr($inn, 0, -1));
                 $inn12 = $this->checksum($inn);
 
                 return $inn11 === (int) $inn[10] && $inn12 === (int) $inn[11];
-                break;
         }
 
         return false;
