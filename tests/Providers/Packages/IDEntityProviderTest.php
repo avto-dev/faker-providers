@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace AvtoDev\FakerProviders\Tests\Providers\Cars;
+namespace AvtoDev\FakerProviders\Tests\Providers\Packages;
 
 use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\IDEntity\Types\TypedIDEntityInterface;
@@ -10,7 +10,7 @@ use AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider
  */
 class IDEntityProviderTest extends AbstractProviderTestCase
 {

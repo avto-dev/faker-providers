@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider
  */
 class BodyProviderTest extends AbstractIdentifierTestCase
 {

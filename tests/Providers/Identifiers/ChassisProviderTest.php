@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider
  */
 class ChassisProviderTest extends AbstractIdentifierTestCase
 {

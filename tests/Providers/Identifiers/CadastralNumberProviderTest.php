@@ -9,7 +9,7 @@ use AvtoDev\IDEntity\IDEntity;
 use AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider
  */
 class CadastralNumberProviderTest extends AbstractIdentifierTestCase
 {

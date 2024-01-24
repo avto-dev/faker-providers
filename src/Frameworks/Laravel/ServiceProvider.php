@@ -69,7 +69,10 @@ class ServiceProvider extends IlluminateServiceProvider
             /** @var ConfigRepository $config */
             $config = $app->make(ConfigRepository::class);
 
-            return FakerFactory::create($config->get('app.faker_locale', 'en_US'));
+            /** @var string $locale */
+            $locale = $config->get('app.faker_locale', 'en_US');
+
+            return FakerFactory::create($locale);
         });
     }
 
@@ -107,6 +110,7 @@ class ServiceProvider extends IlluminateServiceProvider
         /** @var ConfigRepository $config */
         $config = $this->app->make('config');
 
+        /** @var string[] */
         return (array) $config->get(static::getConfigRootKeyName() . '.providers');
     }
 

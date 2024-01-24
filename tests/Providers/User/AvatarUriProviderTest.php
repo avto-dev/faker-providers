@@ -8,7 +8,7 @@ use AvtoDev\FakerProviders\Providers\User\AvatarUriProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
 /**
- * @covers \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider<extended>
+ * @covers \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider
  */
 class AvatarUriProviderTest extends AbstractProviderTestCase
 {
@@ -52,7 +52,7 @@ class AvatarUriProviderTest extends AbstractProviderTestCase
             $uri = $this->faker->userAvatarUri(null, $value, $value);
 
             $positive = (int) abs($value);
-            $this->assertDoesNotMatchRegularExpression("~\-{$positive}~", $uri);
+            $this->assertDoesNotMatchRegularExpression("~-{$positive}~", $uri);
         }
     }
 
