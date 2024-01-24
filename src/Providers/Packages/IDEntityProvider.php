@@ -5,16 +5,9 @@ declare(strict_types = 1);
 namespace AvtoDev\FakerProviders\Providers\Packages;
 
 use AvtoDev\IDEntity\IDEntity;
+use AvtoDev\FakerProviders\Providers\Identifiers;
 use AvtoDev\IDEntity\Types\TypedIDEntityInterface;
 use AvtoDev\FakerProviders\Providers\AbstractFakerProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\GrzProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\StsProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\VinProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\BodyProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\ChassisProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\CadastralNumberProvider;
-use AvtoDev\FakerProviders\Providers\Identifiers\DriverLicenseNumberProvider;
 
 /**
  * @property-read TypedIDEntityInterface $idEntity
@@ -37,42 +30,42 @@ class IDEntityProvider extends AbstractFakerProvider
 
         switch ($id_type) {
             case IDEntity::ID_TYPE_VIN:
-                $this->lazyLoad(VinProvider::class);
+                $this->lazyLoad(Identifiers\VinProvider::class);
 
                 return IDEntity::make($this->generator->vinCode(), $id_type);
 
             case IDEntity::ID_TYPE_GRZ:
-                $this->lazyLoad(GrzProvider::class);
+                $this->lazyLoad(Identifiers\GrzProvider::class);
 
                 return IDEntity::make($this->generator->grzCode(), $id_type);
 
             case IDEntity::ID_TYPE_STS:
-                $this->lazyLoad(StsProvider::class);
+                $this->lazyLoad(Identifiers\StsProvider::class);
 
                 return IDEntity::make($this->generator->stsCode(), $id_type);
 
             case IDEntity::ID_TYPE_PTS:
-                $this->lazyLoad(PtsProvider::class);
+                $this->lazyLoad(Identifiers\PtsProvider::class);
 
                 return IDEntity::make($this->generator->ptsCode(), $id_type);
 
             case IDEntity::ID_TYPE_BODY:
-                $this->lazyLoad(BodyProvider::class);
+                $this->lazyLoad(Identifiers\BodyProvider::class);
 
                 return IDEntity::make($this->generator->bodyCode(), $id_type);
 
             case IDEntity::ID_TYPE_CHASSIS:
-                $this->lazyLoad(ChassisProvider::class);
+                $this->lazyLoad(Identifiers\ChassisProvider::class);
 
                 return IDEntity::make($this->generator->chassisCode(), $id_type);
 
             case IDEntity::ID_TYPE_DRIVER_LICENSE_NUMBER:
-                $this->lazyLoad(DriverLicenseNumberProvider::class);
+                $this->lazyLoad(Identifiers\DriverLicenseNumberProvider::class);
 
                 return IDEntity::make($this->generator->driverLicenseNumber(), $id_type);
 
             case IDEntity::ID_TYPE_CADASTRAL_NUMBER:
-                $this->lazyLoad(CadastralNumberProvider::class);
+                $this->lazyLoad(Identifiers\CadastralNumberProvider::class);
 
                 return IDEntity::make($this->generator->cadastralNumber(), $id_type);
         }
