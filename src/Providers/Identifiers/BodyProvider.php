@@ -32,7 +32,7 @@ class BodyProvider extends AbstractIdentifierProvider
      * @var string[]
      */
     protected static $formats = [
-        '#######',
+        '########',
         '??##########',
         '???###-#######',
         '???### #######',
@@ -81,7 +81,7 @@ class BodyProvider extends AbstractIdentifierProvider
                 break;
 
             case 1:
-                $code = \mb_substr($this->bodyCode(...$arguments), 0, 6);
+                $code = \mb_substr($this->bodyCode(...$arguments), 0, 7);
                 break;
         }
 
