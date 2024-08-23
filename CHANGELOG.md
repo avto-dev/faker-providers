@@ -9,8 +9,8 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 ### Changed
 
 - Minimal valid length of chassis_code and body_code is 8 symbols
-- Minimal `avto-dev/extended-laravel-validator` version now is `4.0`
 - Minimal `avto-dev/identity-laravel` version now is `5.9`
+- Minimal `avto-dev/extended-laravel-validator` version now is `4.0`
 
 ## v3.7.0
 
