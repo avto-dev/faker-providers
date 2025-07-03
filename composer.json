@@ -23,10 +23,10 @@
         "fakerphp/faker": "^1.23.1"
     },
     "require-dev": {
-        "avto-dev/extended-laravel-validator": "^4.0",
-        "avto-dev/identity-laravel": "^5.9",
-        "laravel/laravel": "~10.0 || ~11.0",
-        "phpstan/phpstan": "^1.10.66",
+        "avto-dev/extended-laravel-validator": "^5.0",
+        "avto-dev/identity-laravel": "^5.10",
+        "laravel/laravel": "~10.0 || ~11.0 || ~12.0",
+        "phpstan/phpstan": "^1.12.27",
         "phpunit/phpunit": "^10.5"
     },
     "autoload": {
