@@ -4,12 +4,11 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Tests\Providers\User;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use AvtoDev\FakerProviders\Providers\User\AvatarUriProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
-/**
- * @covers \AvtoDev\FakerProviders\Providers\User\AvatarUriProvider
- */
+#[CoversClass(AvatarUriProvider::class)]
 class AvatarUriProviderTest extends AbstractProviderTestCase
 {
     /**

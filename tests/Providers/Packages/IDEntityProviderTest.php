@@ -5,13 +5,12 @@ declare(strict_types = 1);
 namespace AvtoDev\FakerProviders\Tests\Providers\Packages;
 
 use AvtoDev\IDEntity\IDEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
 use AvtoDev\IDEntity\Types\TypedIDEntityInterface;
 use AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
-/**
- * @covers \AvtoDev\FakerProviders\Providers\Packages\IDEntityProvider
- */
+#[CoversClass(IDEntityProvider::class)]
 class IDEntityProviderTest extends AbstractProviderTestCase
 {
     /**

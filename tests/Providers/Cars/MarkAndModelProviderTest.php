@@ -4,12 +4,11 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Cars;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
-/**
- * @covers \AvtoDev\FakerProviders\Providers\Cars\MarkAndModelProvider
- */
+#[CoversClass(MarkAndModelProvider::class)]
 class MarkAndModelProviderTest extends AbstractProviderTestCase
 {
     /**
