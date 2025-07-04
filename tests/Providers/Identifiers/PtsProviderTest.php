@@ -6,11 +6,10 @@ namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
 use Closure;
 use AvtoDev\IDEntity\IDEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
 use AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider;
 
-/**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\PtsProvider
- */
+#[CoversClass(PtsProvider::class)]
 class PtsProviderTest extends AbstractIdentifierTestCase
 {
     /**

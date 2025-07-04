@@ -4,12 +4,11 @@ declare(strict_types = 1);
 
 namespace AvtoDev\FakerProviders\Tests\Providers\Identifiers;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider;
 use AvtoDev\FakerProviders\Tests\Providers\AbstractProviderTestCase;
 
-/**
- * @covers \AvtoDev\FakerProviders\Providers\Identifiers\InnAndKppProvider
- */
+#[CoversClass(InnAndKppProvider::class)]
 class InnAndKppProviderTest extends AbstractProviderTestCase
 {
     /**

@@ -5,12 +5,12 @@ declare(strict_types = 1);
 namespace AvtoDev\FakerProviders\Tests\Frameworks\Laravel;
 
 use Faker\Generator as FakerGenerator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider;
 use Illuminate\Foundation\Testing\TestCase as IlluminateTestCase;
 use AvtoDev\FakerProviders\Tests\Traits\CreatesLaravelApplicationTrait;
 
-/**
- * @covers \AvtoDev\FakerProviders\Frameworks\Laravel\ServiceProvider
- */
+#[CoversClass(ServiceProvider::class)]
 class ServiceProviderTest extends IlluminateTestCase
 {
     use CreatesLaravelApplicationTrait;

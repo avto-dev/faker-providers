@@ -5,10 +5,9 @@ declare(strict_types = 1);
 namespace AvtoDev\FakerProviders\Tests;
 
 use AvtoDev\FakerProviders\ExtendedFaker;
+use PHPUnit\Framework\Attributes\CoversClass;
 
-/**
- * @covers \AvtoDev\FakerProviders\ExtendedFaker
- */
+#[CoversClass(ExtendedFaker::class)]
 class ExtendedFakerTest extends AbstractTestCase
 {
     /**

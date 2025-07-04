@@ -36,6 +36,13 @@ abstract class AbstractIdentifierTestCase extends AbstractProviderTestCase
         $this->validation_factory = $this->app->make('validator');
     }
 
+    protected function tearDown(): void
+    {
+        unset($this->app, $this->validation_factory);
+
+        parent::tearDown();
+    }
+
     /**
      * Test identifier using laravel validator and closure.
      *
