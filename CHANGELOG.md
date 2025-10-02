@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 ### Changed
 
-- Версия пакета `fakerphp/faker` поднята до `^1.24.0` совместимой с PHP 8.4
+- `fakerphp/faker` package bumped to `^1.24.0` to be compatible with PHP 8.4
 
 ## v3.9.0
 
