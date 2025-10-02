@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## Unreleased
+
+### Changed
+
+- Версия пакета `fakerphp/faker` поднята до `^1.24.0` совместимой с PHP 8.4
+
 ## v3.9.0
 
 ### Added
