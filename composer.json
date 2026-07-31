@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-json": "*",
         "ext-mbstring": "*",
         "fakerphp/faker": "^1.24.0"
@@ -25,7 +25,7 @@
     "require-dev": {
         "avto-dev/extended-laravel-validator": "^5.0",
         "avto-dev/identity-laravel": "^5.10",
-        "laravel/laravel": "~10.0 || ~11.0 || ~12.0",
+        "laravel/laravel": "~11.0 || ~12.0 || ~13.0",
         "phpstan/phpstan": "^1.12.27",
         "phpunit/phpunit": "^10.5"
     },
