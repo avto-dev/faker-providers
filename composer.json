@@ -26,7 +26,7 @@
         "avto-dev/extended-laravel-validator": "^5.0",
         "avto-dev/identity-laravel": "^5.10",
         "laravel/laravel": "~11.0 || ~12.0 || ~13.0",
-        "phpstan/phpstan": "^1.12.27",
+        "phpstan/phpstan": "^2.0.0",
         "phpunit/phpunit": "^10.5"
     },
     "autoload": {
